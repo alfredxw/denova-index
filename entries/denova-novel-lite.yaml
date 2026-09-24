@@ -1,0 +1,20 @@
+id: denova-novel-lite
+name:
+  zh-CN: 轻量小说创作
+  en-US: Novel writing essentials
+description:
+  zh-CN: 从构思、大纲到章节写作的轻量工作流。
+  en-US: A lightweight workflow from story ideas and outlines to chapter drafts.
+author: alfredxw
+format: skill
+kinds:
+  - skill
+tags:
+  - writing
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova
+  ref: master
+  path: skills/novel-lite
+updated_at: 2026-09-24
+featured: true

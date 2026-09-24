@@ -1,0 +1,21 @@
+id: denova-chapter-illustration
+name:
+  zh-CN: 章节配图
+  en-US: Chapter illustrations
+description:
+  zh-CN: 结合章节内容组织插图构思与生成。
+  en-US: Plan and generate illustrations from chapter content.
+author: alfredxw
+format: skill
+kinds:
+  - skill
+tags:
+  - writing
+  - images
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova
+  ref: master
+  path: skills/chapter-illustration
+updated_at: 2026-09-24
+featured: false

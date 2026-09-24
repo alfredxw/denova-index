@@ -1,0 +1,31 @@
+name: Submit or update a package
+description: Request a catalog addition or correction.
+title: "[Package] "
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Package name
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Public source URL
+      description: Include the branch and package subdirectory.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description and compatibility
+      description: Include author, resource types, and intended use.
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Package format
+      options: [skill, extension.plugin, extension.game, denova.resource-pack, character_card]
+    validations:
+      required: true

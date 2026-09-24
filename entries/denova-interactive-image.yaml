@@ -1,0 +1,21 @@
+id: denova-interactive-image
+name:
+  zh-CN: 游戏场景插图
+  en-US: Game scene illustrations
+description:
+  zh-CN: 为互动故事中的场景与角色生成插图。
+  en-US: Generate scene and character illustrations for interactive stories.
+author: alfredxw
+format: skill
+kinds:
+  - skill
+tags:
+  - game
+  - images
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova
+  ref: master
+  path: skills/interactive-image
+updated_at: 2026-09-24
+featured: false
