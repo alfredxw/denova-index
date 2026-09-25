@@ -1,0 +1,45 @@
+{
+  "description": "Count non-whitespace graphemes, Unicode word-like segments, blank-line-separated paragraphs and sentences. Word segments are not model tokens; segmentation of Chinese text is language-dependent. Pass the text directly; this tool does not read files or call models.",
+  "effect": "pure",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "maxLength": 100000
+      }
+    },
+    "required": [
+      "text"
+    ],
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "characters": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "wordSegments": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "paragraphs": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "sentences": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "required": [
+      "characters",
+      "wordSegments",
+      "paragraphs",
+      "sentences"
+    ],
+    "additionalProperties": false
+  }
+}

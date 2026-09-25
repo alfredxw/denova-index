@@ -1,0 +1,25 @@
+id: story-review
+name:
+  zh-CN: 故事连贯性审稿
+  en-US: Story continuity review
+description:
+  zh-CN: 核对时间线、视角知识与场景因果，用原文证据给出少量可执行修改建议。
+  en-US: Review continuity, viewpoint knowledge and scene causality with evidence
+    and focused fixes.
+author: alfredxw
+format: skill
+kinds:
+  - skill
+tags:
+  - writing
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/story-review
+updated_at: 2026-09-25
+featured: true
+compatibility:
+  zh-CN: 独立示例 Skill，不属于 Denova 内置技能。默认只审阅，不自动改稿。
+  en-US: An independent example Skill, separate from built-ins. Reviews drafts
+    without automatically editing them.

@@ -1,0 +1,38 @@
+{
+  "format": "denova.resource-pack",
+  "schema_version": 1,
+  "package": {
+    "id": "harbor-lore",
+    "name": "潮汐港 · 资料与开场",
+    "description": "原创中文悬疑世界：三份资料和两个开场。",
+    "version": "1.0.0",
+    "author": "alfredxw"
+  },
+  "resources": [
+    {
+      "id": "harbor",
+      "kind": "lore.item",
+      "path": "lore/harbor.json"
+    },
+    {
+      "id": "keeper",
+      "kind": "lore.item",
+      "path": "lore/keeper.json"
+    },
+    {
+      "id": "warehouse",
+      "kind": "lore.item",
+      "path": "lore/warehouse.json"
+    },
+    {
+      "id": "late-light",
+      "kind": "game.opening",
+      "path": "openings/late-light.json"
+    },
+    {
+      "id": "wet-ledger",
+      "kind": "game.opening",
+      "path": "openings/wet-ledger.json"
+    }
+  ]
+}

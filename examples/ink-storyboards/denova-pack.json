@@ -1,0 +1,18 @@
+{
+  "format": "denova.resource-pack",
+  "schema_version": 1,
+  "package": {
+    "id": "ink-storyboards",
+    "name": "Ink storyboards",
+    "description": "Monochrome ink scene illustrations.",
+    "version": "1.0.0",
+    "author": "alfredxw"
+  },
+  "resources": [
+    {
+      "id": "ink",
+      "kind": "preset.image",
+      "path": "ink.json"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+id: text-statistics
+name:
+  zh-CN: 文本统计
+  en-US: Text statistics
+description:
+  zh-CN: 统计字符、词语、段落与句子，不读取文件或调用模型。
+  en-US: Count characters, word segments, paragraphs and sentences without files
+    or a model.
+author: alfredxw
+format: extension.plugin
+kinds:
+  - extension.plugin
+tags:
+  - writing
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/text-statistics
+updated_at: 2026-09-25
+featured: true
+compatibility:
+  zh-CN: 需要 Denova 扩展 API v1 和本机 Node.js。
+  en-US: Requires Denova extension API v1 and local Node.js.

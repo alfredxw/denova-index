@@ -1,0 +1,16 @@
+{
+  "name": "Quiet mystery",
+  "description": "Close perspective, physical clues and fair reveals.",
+  "style_refs": [
+    "prose"
+  ],
+  "slots": [
+    {
+      "id": "system",
+      "name": "Suspense direction",
+      "target": "system",
+      "enabled": true,
+      "content": "Write restrained mystery in the requested language. Stay within the viewpoint character's observable knowledge. Establish a mundane expectation, then introduce one concrete discrepancy. Let actions and sensory evidence carry tension. Distinguish suspicion from confirmed facts. Keep clues compatible with established lore and chronology. Do not reveal a solution through unexplained intuition. End a scene on a choice, discovery or changed relationship, not an arbitrary cliffhanger. Preserve the user's control over major plot outcomes."
+    }
+  ]
+}

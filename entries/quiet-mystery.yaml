@@ -1,0 +1,26 @@
+id: quiet-mystery
+name:
+  zh-CN: 静默悬疑 · 叙事与文风
+  en-US: Quiet mystery · narrative & prose
+description:
+  zh-CN: 以视角限制、物证和公平伏笔组织悬疑场景，附可单独复用的文风参考。
+  en-US: A restrained suspense preset with close perspective, physical clues and a
+    reusable prose reference.
+author: alfredxw
+format: denova.resource-pack
+kinds:
+  - preset.narrative
+  - style.reference
+tags:
+  - writing
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/quiet-mystery
+updated_at: 2026-09-25
+featured: true
+compatibility:
+  zh-CN: 需要支持资源包导入的 Denova。叙事预设会自动带入文风依赖。
+  en-US: Requires Denova resource-pack import. Selecting the narrative also
+    includes its prose reference.

@@ -1,0 +1,26 @@
+id: ink-storyboards
+name:
+  zh-CN: 水墨分镜
+  en-US: Ink storyboards
+description:
+  zh-CN: 为章节与游戏场景生成单幅黑白水墨插图，强调人物轮廓、动作和留白。
+  en-US: A monochrome ink illustration preset for chapters and game scenes,
+    emphasizing silhouettes and readable action.
+author: alfredxw
+format: denova.resource-pack
+kinds:
+  - preset.image
+tags:
+  - images
+  - writing
+  - game
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/ink-storyboards
+updated_at: 2026-09-25
+featured: true
+compatibility:
+  zh-CN: 需要支持资源包导入的 Denova；生成图像需自行配置图像模型。
+  en-US: Requires resource-pack import and a configured image model for generation.

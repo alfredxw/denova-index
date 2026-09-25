@@ -1,0 +1,52 @@
+{
+  "manifestVersion": 1,
+  "id": "index.lantern-crossing",
+  "version": "1.0.0",
+  "apiMajor": 1,
+  "name": {
+    "zh-CN": "雾中灯渡",
+    "en-US": "Lantern crossing"
+  },
+  "description": {
+    "zh-CN": "在雾港选择路线、寻找线索的分支短篇，自动保存进度，无需模型。",
+    "en-US": "A short branching harbor mystery with saved progress; no model required."
+  },
+  "distribution": {
+    "files": [
+      "index.html",
+      "game.mjs",
+      "story.mjs",
+      "style.css",
+      "client.mjs",
+      "locales",
+      "LICENSE",
+      "NOTICE"
+    ]
+  },
+  "views": [
+    {
+      "id": "main",
+      "source": {
+        "kind": "static",
+        "path": "index.html"
+      }
+    }
+  ],
+  "game": {
+    "viewId": "main",
+    "storage": {
+      "kind": "self",
+      "saveFormat": "1"
+    }
+  },
+  "permissions": {
+    "required": [
+      "gameData"
+    ],
+    "optional": []
+  },
+  "locales": {
+    "zh-CN": "locales/zh-CN.json",
+    "en-US": "locales/en-US.json"
+  }
+}

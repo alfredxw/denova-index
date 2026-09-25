@@ -1,0 +1,66 @@
+{
+  "manifestVersion": 1,
+  "id": "index.text-statistics",
+  "version": "1.0.0",
+  "apiMajor": 1,
+  "name": {
+    "zh-CN": "文本统计",
+    "en-US": "Text statistics"
+  },
+  "description": {
+    "zh-CN": "统计字符、词语、段落与句子，不读取文件或调用模型。",
+    "en-US": "Count characters, word segments, paragraphs and sentences without files or a model."
+  },
+  "distribution": {
+    "files": [
+      "server.mjs",
+      "statistics.mjs",
+      "runtime.mjs",
+      "tools",
+      "locales",
+      "LICENSE",
+      "NOTICE"
+    ]
+  },
+  "runtime": {
+    "backend": {
+      "protocol": "denova-runtime-v1",
+      "launch": {
+        "kind": "runtime",
+        "runtime": "node",
+        "entry": "server.mjs",
+        "args": []
+      }
+    }
+  },
+  "permissions": {
+    "required": [
+      "tools.invoke"
+    ],
+    "optional": []
+  },
+  "contributes": {
+    "tools": [
+      {
+        "id": "statistics",
+        "definition": "tools/statistics.json",
+        "endpoint": {
+          "method": "POST",
+          "path": "/tools/statistics"
+        }
+      }
+    ],
+    "toolsets": [
+      {
+        "id": "default",
+        "tools": [
+          "statistics"
+        ]
+      }
+    ]
+  },
+  "locales": {
+    "zh-CN": "locales/zh-CN.json",
+    "en-US": "locales/en-US.json"
+  }
+}

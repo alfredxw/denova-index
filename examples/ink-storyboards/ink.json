@@ -1,0 +1,5 @@
+{
+  "name": "Ink storyboards",
+  "description": "Readable monochrome ink compositions for story scenes.",
+  "prompt": "Create one story illustration in monochrome ink on warm off-white paper. Build the scene around the requested action, with clear silhouettes and one strong focal point. Use expressive brush edges, restrained wash shadows and generous negative space. Preserve the specified character features, clothing and spatial relationships. Separate foreground, middle ground and background through value rather than excessive detail. Show objects that matter to the story. No captions, speech bubbles, watermarks, ornamental frames or invented letters. If several moments are described, select the decisive moment instead of merging them into a collage."
+}

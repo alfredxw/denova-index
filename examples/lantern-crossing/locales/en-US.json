@@ -1,0 +1,68 @@
+{
+  "title": "Lantern crossing",
+  "subtitle": "One foggy night. Two endings. Your decisions are saved after every choice.",
+  "eyebrow": "TIDE HARBOR / A SHORT STORY",
+  "exit": "Return to Denova",
+  "retry": "Reload saved progress",
+  "restart": "Start a new journey",
+  "step": "PASSAGE {n}",
+  "loading": "Loading saved progress…",
+  "saving": "Saving your decision…",
+  "saved": "Progress saved.",
+  "ready": "Choose a route to begin.",
+  "loadFailed": "The save could not be loaded. Reload to retry; existing data will be kept.",
+  "saveFailed": "This choice was not confirmed. Reload saved progress before continuing.",
+  "conflict": "Saved progress changed elsewhere. Reload before making another choice.",
+  "scenes": {
+    "dock": {
+      "title": "The late lantern",
+      "text": "The third flash from the lighthouse is seven minutes late. The bridge is rising, but your receipt says: Warehouse Seven, after the third light.\n\nA figure disappears along the disused tracks.",
+      "choices": {
+        "inspect": "Inspect the writing on the receipt",
+        "follow": "Follow the figure along the tracks"
+      }
+    },
+    "ledger": {
+      "title": "The altered date",
+      "text": "Tide levels fill the back of the receipt. The last date has been scraped away and rewritten; the ink is still wet. It is signed by the missing lighthouse keeper.\n\nA wrench taps against the railing below the tower.",
+      "choices": {
+        "question": "Ask the keeper at the tower",
+        "hurry": "Hurry toward the warehouse"
+      }
+    },
+    "bridge": {
+      "title": "The bridge in the fog",
+      "text": "An empty cart stands at the center of the bridge, its wheels tied in place. Across the water, someone covers a lantern twice, then waits.\n\nIt could be a warning. It could be a call for help.",
+      "choices": {
+        "signal": "Answer with your lantern",
+        "cross": "Pass the cart and keep walking"
+      }
+    },
+    "keeper": {
+      "title": "Seven minutes",
+      "text": "Shen spreads a maintenance plan on the steps.\n\n“The old channel is not sealed. People are repairing it, and the port opened the sluice early tonight. Seven minutes is all I could buy them.”\n\nShe gives you the spare lantern. Her own has gone out.",
+      "choices": {
+        "trust": "Light the maintenance hatch for her",
+        "investigate": "Check Warehouse Seven first"
+      }
+    },
+    "warehouse": {
+      "title": "Water behind the door",
+      "text": "The paving outside is dry. Inside, seawater covers the floor. Three knocks come from below. A chain runs through a hatch and around the harbor bell.\n\nPulling it will open the hidden door. Ringing the bell will wake the whole port.",
+      "choices": {
+        "chain": "Pull the chain and enter alone",
+        "bell": "Ring the bell and call for help"
+      }
+    },
+    "rescue": {
+      "title": "After the tide",
+      "text": "Lanterns gather around the hatch. As the last worker reaches the steps, the third light finally flashes on time.\n\nThe missing keeper, wrapped in a blanket, hands you the other half of the receipt. The maintenance money paid for repairs nobody was allowed to record.\n\nAt dawn, you must decide who receives the evidence. Tonight, everyone came home.",
+      "choices": {}
+    },
+    "smugglers": {
+      "title": "The second ledger",
+      "text": "The hatch opens onto a dry service walkway. At its end: three workers, a tool chest and two contradictory ledgers. You lead the workers out, but cannot guard the chest.\n\nBy the time the lighthouse returns, port officials have taken the evidence.\n\nYou saved the workers. Convincing the harbor will take another night.",
+      "choices": {}
+    }
+  }
+}

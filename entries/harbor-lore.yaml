@@ -1,0 +1,27 @@
+id: harbor-lore
+name:
+  zh-CN: 潮汐港 · 资料与开场
+  en-US: Tide harbor · lore & openings
+description:
+  zh-CN: 原创中文港口悬疑：世界设定、守灯人、七号仓资料，以及两段可选游戏开场。
+  en-US: "An original Chinese mystery setting: harbor lore, a keeper, a warehouse
+    and two playable-story openings."
+author: alfredxw
+format: denova.resource-pack
+kinds:
+  - lore.item
+  - game.opening
+tags:
+  - writing
+  - game
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/harbor-lore
+updated_at: 2026-09-25
+featured: true
+compatibility:
+  zh-CN: 安装时选择目标书籍；内容为中文，适用于写作资料库和内置互动故事。
+  en-US: Choose a target book during import. Chinese content for the lore library
+    and built-in interactive stories.

@@ -1,0 +1,26 @@
+{
+  "format": "denova.resource-pack",
+  "schema_version": 1,
+  "package": {
+    "id": "quiet-mystery",
+    "name": "Quiet mystery",
+    "description": "Restrained suspense with a reusable prose reference.",
+    "version": "1.0.0",
+    "author": "alfredxw"
+  },
+  "resources": [
+    {
+      "id": "narrative",
+      "kind": "preset.narrative",
+      "path": "narrative.json",
+      "requires": [
+        "prose"
+      ]
+    },
+    {
+      "id": "prose",
+      "kind": "style.reference",
+      "path": "quiet-prose.md"
+    }
+  ]
+}

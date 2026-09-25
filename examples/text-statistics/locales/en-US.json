@@ -1,0 +1,5 @@
+{
+  "errors.invalidText": "Enter text of at most 100,000 characters.",
+  "errors.notFound": "The requested tool is unavailable.",
+  "errors.requestFailed": "The tool request failed."
+}

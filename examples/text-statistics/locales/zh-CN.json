@@ -1,0 +1,5 @@
+{
+  "errors.invalidText": "请输入不超过 100,000 个字符的文本。",
+  "errors.notFound": "请求的工具不可用。",
+  "errors.requestFailed": "工具请求失败。"
+}

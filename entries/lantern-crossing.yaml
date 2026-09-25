@@ -1,0 +1,24 @@
+id: lantern-crossing
+name:
+  zh-CN: 雾中灯渡
+  en-US: Lantern crossing
+description:
+  zh-CN: 在雾港选择路线、寻找线索的分支短篇，自动保存进度，无需模型。
+  en-US: A short branching harbor mystery with saved progress; no model required.
+author: alfredxw
+format: extension.game
+kinds:
+  - extension.game
+tags:
+  - game
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/lantern-crossing
+updated_at: 2026-09-25
+featured: true
+compatibility:
+  zh-CN: 需要 Denova 扩展 API v1。纯前端游戏，仅请求实例存档权限。
+  en-US: Requires Denova extension API v1. A static game using only its own
+    save-data permission.
