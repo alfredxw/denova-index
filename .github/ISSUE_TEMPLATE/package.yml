@@ -1,31 +1,22 @@
 name: Submit or update a package
-description: Request a catalog addition or correction.
+description: Register a package by its public source; presentation comes from denova-pack.json.
 title: "[Package] "
 body:
   - type: input
-    id: name
+    id: source
     attributes:
-      label: Package name
+      label: Public package source
+      description: Provide the GitHub repository URL, Git ref and package directory. Keep names, descriptions and usage in that directory's denova-pack.json.
+      placeholder: https://github.com/author/resources · main · writing-kit
     validations:
       required: true
   - type: input
-    id: source
+    id: manifest
     attributes:
-      label: Public source URL
-      description: Include the branch and package subdirectory.
-    validations:
-      required: true
+      label: Manifest URL for ZIP sources only
+      description: If the source is a ZIP URL, link to a public copy of the same denova-pack.json included in the archive. GitHub sources need no additional URL.
   - type: textarea
-    id: description
+    id: notes
     attributes:
-      label: Description and compatibility
-      description: Include author, resource types, and intended use.
-    validations:
-      required: true
-  - type: dropdown
-    id: format
-    attributes:
-      label: Package format
-      options: [skill, extension.plugin, extension.game, denova.resource-pack, character_card]
-    validations:
-      required: true
+      label: Optional registration notes
+      description: Describe a source correction or anything the maintainer should check. Package ID, author, resource types and presentation are read from the manifest.

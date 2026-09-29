@@ -1,43 +1,46 @@
 ---
 name: book-analysis
-description: Analyze a supplied book, chapter range or excerpt to explain story structure, character development, conflict, pacing, setup/payoff and prose techniques, with source locations and reusable writing principles. Use for book dissection and craft study.
+description: 分析用户提供的小说、章节范围或片段，结合原文位置解释结构、人物、冲突、节奏、伏笔回收与语言技巧，提炼可复用的写作方法。用于拆书和写作技法研究，适用于各类小说。
 ---
 
-# Book analysis
+# 拆书分析
 
-Turn the requested reading into an evidence-based explanation of how the writing works. This Skill applies to any fiction genre; it does not assume cultivation fiction.
+把阅读材料转化为有原文依据的写作分析。本技能适用于各种小说题材，不预设作品一定是修仙故事。默认使用中文，用户另有要求时遵循其语言偏好。
 
-## Establish the reading boundary
+## 确定阅读范围
 
-Use the user's specified source, range and study goal. Locate supplied files with the tools actually available in this environment. Read the source before analyzing it. If no text is accessible, ask for the text or a usable source; do not substitute familiarity with a famous title for reading. Do not fetch a different edition or the rest of a book unless the task calls for it.
+按用户指定的来源、范围与研究目标展开工作。用当前实际可用的工具查找所提供的文件，先读原文，再作分析。没有可读取的正文时，请用户提供文本或可用来源；不要用对某部名作的印象代替阅读。任务未要求时，不自行换版本或获取整本书。
 
-For a whole book, use its contents or chapter boundaries to plan reading. Maintain a compact coverage record with chapter/location, actual events, character decisions, promises and payoffs. Read in chunks that preserve chapter boundaries. If only a sample can be read, identify the exact sampled range and limit conclusions to that range. Do not silently claim whole-book coverage from an opening or synopsis.
+分析全书时，依据目录或章节边界安排阅读，简要记录已读章节或位置、实际事件、人物选择、叙事承诺与兑现。分段阅读时尽量保留章节完整性。只能读到样本时，明确实际抽样范围，并将结论限定于该范围；不能从开篇或简介推称已经覆盖全书。
 
-## Choose useful lenses
+## 选择有用的观察角度
 
-Follow the user's focus rather than filling every category:
-- Structure: the initial promise, inciting change, successive goals, turning points, climax and aftermath. Explain what changes between units, not just what happens.
-- Character: desire, pressure, decision, cost and resulting change. Separate a stated trait from behavior demonstrated by the text.
-- Conflict and momentum: resources, information, relationships or rules that restrict options; how a scene increases pressure, releases it or redirects the goal.
-- Setup and payoff: where a promise or clue is planted, reinforced, transformed or resolved. Distinguish an unresolved thread inside an excerpt from a dropped thread in a completed work.
-- Viewpoint and information: who knows what, when the reader learns it, and how that gap changes expectation.
-- Prose and dialogue: specific choices in detail, syntax, imagery, narrative distance and subtext, linked to their effect in this passage.
+围绕用户关注的问题分析，不必每次填满所有类别：
 
-## Deliver the analysis
+- 结构：开篇承诺、引发变化的事件、阶段目标、转折、高潮及余波。说明单元之间发生了什么变化，不只复述情节。
+- 人物：欲望、压力、选择、代价与随之发生的改变。区分旁白宣称的性格和原文行为真正表现出的性格。
+- 冲突与推进：哪些资源、信息、关系或规则限制了选择；一个场景如何加压、缓和压力或改变目标。
+- 铺垫与回收：承诺或线索何处埋下、强化、转义、兑现。片段中暂未解决的线索，不等于完整作品遗弃的线索。
+- 视角与信息：谁知道什么、读者何时得知，以及信息差怎样改变期待。
+- 语言与对白：细节、句式、意象、叙事距离与言外之意的具体选择，以及它们在本段中的作用。
 
-Start with the source/range actually read and the central craft finding. Use chapter titles, file paths, paragraph anchors or short quotations so observations can be checked. Label uncertain interpretations. Describe intended or plausible reader effects as interpretations, not measured audience reactions.
+## 交付分析
 
-Prefer a few developed claims following this chain:
-**Textual evidence → narrative mechanism → effect → conditions for reuse.**
-A plot summary only supplies context; the value is the explanation of why a particular arrangement works or fails.
+先交代实际读过的来源与范围，再给出最关键的技法判断。用章节名、文件位置、段落编号或短引文支持观察，便于核查。不确定的解释应明确标注；对读者感受的判断只能作为合理解释，不能写成已经测量过的受众反应。
 
-For transfer to another project, abstract the mechanism and provide a new miniature example if useful. Preserve the user's genre and goals. Do not reproduce distinctive names, scenes, phrases or a chapter-by-chapter plot as a reusable template. Separate craft observations from personal taste.
+优先把少量观点讲透，沿着以下顺序展开：
 
-Use the user's language. Do not change source chapters, outlines or lore unless requested. If the user asks to save the report, write it to the requested location using available workspace tools; otherwise return it in chat. Never claim an unread source or an uncreated file.
+**原文证据 → 叙事机制 → 可能效果 → 复用条件。**
 
-## Worked example
+情节梗概只用于交代必要背景，分析的价值在于解释某种安排为何有效或为何失效。
 
-This short original passage demonstrates the analysis method. It is not an extract from a published book.
+将手法迁移到其他项目时，抽象出机制，必要时给出一个全新的短例子，并尊重用户的题材与目标。不要把原作独特的人名、场景、措辞或逐章情节作为可直接套用的模板。区分技法观察与个人喜好。
+
+未经要求，不修改原文章节、大纲或资料库。用户要求保存报告时，用可用的工作区工具写入指定位置，否则直接在对话中交付。不声称读过尚未读取的来源，也不声称创建了尚未生成的文件。
+
+## 示例
+
+以下为演示分析方法而创作的短文，不摘录自已发表作品。
 
 ### 原文
 

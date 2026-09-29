@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { parse } from 'yaml';
+import { validateRegistration, resolveEntry } from './resolve.mjs';
 import { statistics } from '../examples/extension-starter/text-statistics/statistics.mjs';
 
 test('text statistics handles whitespace, multilingual text and grapheme clusters', () => {
@@ -16,8 +17,12 @@ test('text statistics handles whitespace, multilingual text and grapheme cluster
 test('mixed example packages resolve files, directories, dependencies and extension distributions', async () => {
   const packages = [];
   for (const file of await readdir('entries')) {
-    const entry = parse(await readFile(`entries/${file}`, 'utf8'));
-    if (entry.source.url !== 'https://github.com/alfredxw/denova-index') continue;
+    const registration = validateRegistration(parse(await readFile(`entries/${file}`, 'utf8')), file);
+    if (registration.source.url !== 'https://github.com/alfredxw/denova-index') continue;
+    const entry = await resolveEntry(registration);
+    assert.equal(entry.format, 'denova.resource-pack');
+    assert(entry.usage['zh-CN']);
+    assert(entry.usage['en-US']);
     const root = entry.source.path;
     const manifest = JSON.parse(await readFile(`${root}/denova-pack.json`));
     assert.equal(manifest.package.id, entry.id);
@@ -61,9 +66,9 @@ test('mixed example packages resolve files, directories, dependencies and extens
           assert.equal(ids.get(ref)?.kind, 'style.reference');
           assert(resource.requires.includes(ref));
         }
-        if (resource.kind === 'game.opening') {
+        if (resource.kind === 'game.openings') {
           assert(resource.requires.length > 0);
-          assert(resource.requires.every(id => ids.get(id)?.kind === 'lore.item'));
+          assert(resource.requires.every(id => ids.get(id)?.kind === 'lore.collection'));
         }
       }
     }
@@ -71,4 +76,68 @@ test('mixed example packages resolve files, directories, dependencies and extens
     packages.push(entry.id);
   }
   assert.deepEqual(packages.sort(), ['cultivation-starter', 'extension-starter']);
+});
+
+test('cultivation world distributes independently addressable lore in one collection', async () => {
+  const root = 'examples/cultivation-starter';
+  const manifest = JSON.parse(await readFile(`${root}/denova-pack.json`));
+  const resources = manifest.resources.filter(resource => resource.kind === 'lore.collection');
+  assert.equal(resources.length, 1);
+  const collection = JSON.parse(await readFile(`${root}/${resources[0].path}`));
+  assert.equal(collection.version, 1);
+  assert(collection.items.length >= 50);
+  assert.equal(new Set(collection.items.map(item => item.id)).size, collection.items.length);
+  assert.equal(new Set(collection.items.map(item => item.name)).size, collection.items.length);
+  for (const type of ['character', 'location', 'faction', 'world', 'item']) assert(collection.items.some(item => item.type === type));
+  for (const item of collection.items) {
+    assert(item.content.trim().length > 0, `Incomplete setting: ${item.name}`);
+    assert(item.brief_description && item.keywords.length && item.enabled);
+    assert(['resident', 'auto', 'manual'].includes(item.load_mode));
+  }
+  assert.equal(collection.items.filter(item => item.load_mode === 'resident').length, 1);
+  const rules = JSON.parse(await readFile(`${root}/rules.json`));
+  assert.equal(manifest.resources.find(item => item.id === rules.actor_state_id).kind, 'preset.actor_state');
+  assert(manifest.resources.find(item => item.id === 'rules').requires.includes(rules.actor_state_id));
+  const state = JSON.parse(await readFile(`${root}/actor-state.json`));
+  assert(state.actor_state.templates[0].fields.some(field => field.name === '财物'));
+  const events = JSON.parse(await readFile(`${root}/events.json`));
+  assert.equal(new Set(events.events.map(event => event.id)).size, events.events.length);
+  assert(events.events.every(event => event.type_name && event.description_markdown));
+});
+
+test('cultivation authored content stays within the 50000 character budget', async () => {
+  const root = 'examples/cultivation-starter';
+  function countStrings(value) {
+    if (typeof value === 'string') return Array.from(value).length;
+    if (!value || typeof value !== 'object') return 0;
+    return Object.values(value).reduce((total, child) => total + countStrings(child), 0);
+  }
+  let characters = 0;
+  for (const file of ['lore', 'openings', 'narrative', 'actor-state', 'rules', 'events', 'illustration']) {
+    characters += countStrings(JSON.parse(await readFile(`${root}/${file}.json`, 'utf8')));
+  }
+  characters += Array.from(await readFile(`${root}/skills/book-analysis/SKILL.md`, 'utf8')).length;
+  assert(characters <= 50000, `Authored content exceeds the budget: ${characters} characters`);
+});
+
+// Check the authored package boundary, not just filenames in the catalog.
+test('cultivation openings use one collection and editable prompts are Chinese', async () => {
+  const root = 'examples/cultivation-starter';
+  const manifest = JSON.parse(await readFile(`${root}/denova-pack.json`));
+  const resources = manifest.resources.filter(resource => resource.kind === 'game.openings');
+  assert.equal(resources.length, 1);
+  const collection = JSON.parse(await readFile(`${root}/${resources[0].path}`));
+  assert.equal(collection.version, 1);
+  assert.equal(collection.items.length, 3);
+  assert.equal(new Set(collection.items.map(item => item.id)).size, 3);
+  for (const item of collection.items) assert(item.title && item.content);
+  const descriptions = new Set(['name', 'description', 'content', 'prompt', 'update_instruction', 'description_markdown', 'trigger', 'difficulty_guidance', 'state_effect_guidance', 'success_hint', 'failure_hint']);
+  function check(value) {
+    if (!value || typeof value !== 'object') return;
+    for (const [key, field] of Object.entries(value)) {
+      if (descriptions.has(key) && typeof field === 'string') assert(/[\u4e00-\u9fff]/u.test(field), `Expected a readable Chinese ${key}: ${field}`);
+      check(field);
+    }
+  }
+  for (const file of ['narrative', 'illustration', 'actor-state', 'rules', 'events']) check(JSON.parse(await readFile(`${root}/${file}.json`)));
 });

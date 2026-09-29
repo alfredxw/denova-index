@@ -3,37 +3,38 @@
   "schema_version": 1,
   "package": {
     "id": "cultivation-starter",
-    "name": "青岚修仙 · 创作起步包",
-    "description": "传统修仙资料、三种开场、叙事与插图风格，以及可独立使用的通用拆书 Skill。",
-    "version": "1.0.0",
-    "author": "alfredxw"
+    "name": "照夜长河 · 大世界修仙模拟",
+    "description": "五域与仙界的大世界修仙模拟：修炼、功法、宗门、百艺经营与探索形成持续成长，天骄与绝色两榜连接声望和交游。可自创或扮演既有人物，附三种可编辑开局、原生状态与十八类际遇。内容五万字以内。",
+    "version": "2.0.0",
+    "author": "alfredxw",
+    "locale": "zh-CN",
+    "tags": [
+      "writing",
+      "game",
+      "cultivation",
+      "images"
+    ],
+    "usage": "导入世界资料到目标作品，在创作方案中选用相应预设。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书 Skill 可独立使用。",
+    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。",
+    "translations": {
+      "en-US": {
+        "name": "Lanterns of the Long River · Cultivation World Simulation",
+        "description": "An open-world cultivation simulation across five regions and an immortal realm. Practice, techniques, sects, crafts, trade and exploration produce lasting growth; prodigy and beauty rankings connect reputation and relationships. Play custom or existing characters, with three optional editable openings, native state and eighteen event types. Chinese content stays below 50,000 characters.",
+        "usage": "Import the world lore into a book and select the relevant presets. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis Skill works independently.",
+        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model."
+      }
+    }
   },
   "resources": [
     {
       "id": "lore",
-      "kind": "lore.item",
+      "kind": "lore.collection",
       "path": "lore.json"
     },
     {
-      "id": "sect-entry",
-      "kind": "game.opening",
-      "path": "openings/sect-entry.json",
-      "requires": [
-        "lore"
-      ]
-    },
-    {
-      "id": "wandering-start",
-      "kind": "game.opening",
-      "path": "openings/wandering-start.json",
-      "requires": [
-        "lore"
-      ]
-    },
-    {
-      "id": "clan-start",
-      "kind": "game.opening",
-      "path": "openings/clan-start.json",
+      "id": "openings",
+      "kind": "game.openings",
+      "path": "openings.json",
       "requires": [
         "lore"
       ]
@@ -46,15 +47,30 @@
     {
       "id": "illustration",
       "kind": "preset.image",
-      "path": "illustration.json",
-      "assets": [
-        "assets/qinglan-irrigation.png"
-      ]
+      "path": "illustration.json"
     },
     {
       "id": "book-analysis",
       "kind": "skill",
       "path": "skills/book-analysis"
+    },
+    {
+      "id": "actor-state",
+      "kind": "preset.actor_state",
+      "path": "actor-state.json"
+    },
+    {
+      "id": "rules",
+      "kind": "preset.rules",
+      "path": "rules.json",
+      "requires": [
+        "actor-state"
+      ]
+    },
+    {
+      "id": "events",
+      "kind": "preset.events",
+      "path": "events.json"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-const kinds = new Set(['preset.narrative', 'preset.image', 'preset.game_planning', 'preset.events', 'preset.rules', 'preset.actor_state', 'style.reference', 'skill', 'lore.item', 'game.opening', 'project.cover', 'extension.plugin', 'extension.game'])
+const kinds = new Set(['preset.narrative', 'preset.image', 'preset.game_planning', 'preset.events', 'preset.rules', 'preset.actor_state', 'style.reference', 'skill', 'lore.collection', 'game.openings', 'project.cover', 'extension.plugin', 'extension.game'])
 const formats = new Set(['skill', 'extension.plugin', 'extension.game', 'denova.resource-pack', 'character_card'])
 const idPattern = /^[a-z0-9][a-z0-9_-]{0,127}$/
 function localized(value) {
@@ -12,7 +12,7 @@ function localized(value) {
 }
 export function validateEntry(entry, filename) {
   assert(entry && idPattern.test(entry.id) && filename === `${entry.id}.yaml`, 'Invalid entry identity')
-  assert(Object.keys(entry).every(key => ['id', 'name', 'description', 'author', 'format', 'kinds', 'tags', 'source', 'updated_at', 'featured', 'cover', 'compatibility'].includes(key)), 'Unknown entry field')
+  assert(Object.keys(entry).every(key => ['id', 'name', 'description', 'author', 'format', 'kinds', 'tags', 'source', 'updated_at', 'featured', 'cover', 'compatibility', 'usage'].includes(key)), 'Unknown entry field')
   localized(entry.name)
   localized(entry.description)
   assert(typeof entry.author === 'string' && entry.author.length > 0 && entry.author.length <= 200, 'Invalid author')
@@ -23,6 +23,7 @@ export function validateEntry(entry, filename) {
   assert(typeof entry.updated_at === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(entry.updated_at) && !Number.isNaN(Date.parse(entry.updated_at)), 'Invalid date')
   assert(entry.featured === undefined || typeof entry.featured === 'boolean', 'Invalid featured flag')
   if (entry.compatibility) localized(entry.compatibility)
+  if (entry.usage) localized(entry.usage)
   const source = entry.source
   assert(source && ['github', 'https_zip'].includes(source.kind), 'Invalid source kind')
   assert(Object.keys(source).every(key => ['kind', 'url', 'ref', 'path'].includes(key)), 'Unknown source field')

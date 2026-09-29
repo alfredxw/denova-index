@@ -1,26 +1,6 @@
-id: cultivation-starter
-name:
-  zh-CN: 青岚修仙 · 创作起步包
-  en-US: Qinglan cultivation · creative starter
-description:
-  zh-CN: 从炼气到化神的传统修仙体系，配套宗门、人物、地点与三种入道开场，附叙事风格、插图风格和通用拆书 Skill。
-  en-US: An original Chinese cultivation setting with progression, sect life, characters, three openings, prose and illustration presets, and a genre-independent book-analysis Skill.
-author: alfredxw
-format: denova.resource-pack
-kinds:
-  - lore.item
-  - game.opening
-  - preset.narrative
-  - preset.image
-  - skill
-tags: [writing, game, cultivation, images]
 source:
   kind: github
   url: https://github.com/alfredxw/denova-index
   ref: main
   path: examples/cultivation-starter
-updated_at: 2026-09-29
 featured: true
-compatibility:
-  zh-CN: 导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。
-  en-US: Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model.
