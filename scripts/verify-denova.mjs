@@ -9,12 +9,14 @@ const root = fileURLToPath(new URL('..', import.meta.url)), target = resolve(che
 await access(join(target,'internal/platform/platform_test.go'));
 const virtual = join(target,'internal/platform/zz_index_runtime_test.go');
 try { await access(virtual); throw new Error('Overlay target already exists'); } catch(error) { if(error.code!=='ENOENT') throw error; }
+const cultivationVirtual = join(target,'internal/app/resourceexchange/zz_index_cultivation_test.go');
+try { await access(cultivationVirtual); throw new Error('Overlay target already exists'); } catch(error) { if(error.code!=='ENOENT') throw error; }
 const temporary = await mkdtemp(join(tmpdir(),'denova-index-verification-'));
 const overlay = join(temporary,'overlay.json');
-await writeFile(overlay,JSON.stringify({Replace:{[virtual]:join(root,'scripts/denova-runtime_test.go')}}));
+await writeFile(overlay,JSON.stringify({Replace:{[virtual]:join(root,'scripts/denova-runtime_test.go'),[cultivationVirtual]:join(root,'scripts/denova-cultivation_test.go')}}));
 try {
   const code = await new Promise((resolve,reject)=>{
-    const child = spawn('go',['test','-overlay',overlay,'./internal/app/resourceexchange','./internal/platform','-run','TestIndexExamplesValidation|TestIndexRuntimeExamples','-count=1','-v'],{
+    const child = spawn('go',['test','-overlay',overlay,'./internal/app/resourceexchange','./internal/platform','-run','TestIndexExamplesValidation|TestIndexCultivationMaterials|TestIndexRuntimeExamples','-count=1','-v'],{
       cwd:target,stdio:'inherit',env:{...process.env,DENOVA_INDEX_REPO:root,DENOVA_INDEX_EXAMPLES_DIR:join(root,'examples')}
     });
     child.on('error',reject); child.on('exit',resolve);

@@ -4,8 +4,8 @@
   "package": {
     "id": "cultivation-starter",
     "name": "照夜长河 · 大世界修仙模拟",
-    "description": "五域与仙界的大世界修仙模拟：修炼、功法、宗门、百艺经营与探索形成持续成长，天骄与绝色两榜连接声望和交游。可自创或扮演既有人物，附三种可编辑开局、原生状态与十八类际遇。内容五万字以内。",
-    "version": "2.0.0",
+    "description": "五域与仙界的大世界修仙模拟：修炼、功法、宗门、百艺经营与探索形成持续成长，天骄与绝色两榜连接声望和交游。可自创或扮演既有人物，附六位推荐主角、四种可编辑开局、七位女性人物封面与通用背景、原生状态与十八类际遇。内容五万字以内。",
+    "version": "2.1.0",
     "author": "alfredxw",
     "locale": "zh-CN",
     "tags": [
@@ -14,14 +14,14 @@
       "cultivation",
       "images"
     ],
-    "usage": "导入世界资料到目标作品，在创作方案中选用相应预设。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书 Skill 可独立使用。",
-    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。",
+    "usage": "导入世界资料到目标作品，在创作方案中选用相应预设。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书 Skill 可独立使用。 推荐主角含孟迟、纪含章、顾停云、宋问渠、陆照棠、祝清砚。扮演既有人物可选“既有人物·此刻启程”。导入后可在故事的默认背景中选择“照夜长河·通用背景”。",
+    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。 人物封面与通用背景使用资料素材集合，需要支持资料素材与故事默认背景的版本；导入不自动修改故事背景设置。",
     "translations": {
       "en-US": {
         "name": "Lanterns of the Long River · Cultivation World Simulation",
-        "description": "An open-world cultivation simulation across five regions and an immortal realm. Practice, techniques, sects, crafts, trade and exploration produce lasting growth; prodigy and beauty rankings connect reputation and relationships. Play custom or existing characters, with three optional editable openings, native state and eighteen event types. Chinese content stays below 50,000 characters.",
-        "usage": "Import the world lore into a book and select the relevant presets. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis Skill works independently.",
-        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model."
+        "description": "An open-world cultivation simulation across five regions and an immortal realm. Practice, techniques, sects, crafts, trade and exploration produce lasting growth; prodigy and beauty rankings connect reputation and relationships. Play custom or existing characters, with six recommended protagonists, four optional editable openings, seven female character portraits and a general background, native state and eighteen event types. Chinese content stays below 50,000 characters.",
+        "usage": "Import the world lore into a book and select the relevant presets. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis Skill works independently. Use the existing-character opening when playing a Lore character. After import, choose the Long River general background in the story default-background selector.",
+        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model. Portraits and the background require Lore materials support; selecting the default background requires story presentation support. Import does not change story background settings."
       }
     }
   },
@@ -29,7 +29,17 @@
     {
       "id": "lore",
       "kind": "lore.collection",
-      "path": "lore.json"
+      "path": "lore.json",
+      "assets": [
+        "assets/lu-zhaotang.png",
+        "assets/zhu-qingyan.png",
+        "assets/ruan-feizhou.png",
+        "assets/liu-tingchan.png",
+        "assets/hua-zhining.png",
+        "assets/su-wanhe.png",
+        "assets/pei-zhaoxue.png",
+        "assets/long-river-background.png"
+      ]
     },
     {
       "id": "openings",

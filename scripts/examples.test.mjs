@@ -128,8 +128,8 @@ test('cultivation openings use one collection and editable prompts are Chinese',
   assert.equal(resources.length, 1);
   const collection = JSON.parse(await readFile(`${root}/${resources[0].path}`));
   assert.equal(collection.version, 1);
-  assert.equal(collection.items.length, 3);
-  assert.equal(new Set(collection.items.map(item => item.id)).size, 3);
+  assert.equal(collection.items.length, 4);
+  assert.equal(new Set(collection.items.map(item => item.id)).size, 4);
   for (const item of collection.items) assert(item.title && item.content);
   const descriptions = new Set(['name', 'description', 'content', 'prompt', 'update_instruction', 'description_markdown', 'trigger', 'difficulty_guidance', 'state_effect_guidance', 'success_hint', 'failure_hint']);
   function check(value) {
@@ -140,4 +140,36 @@ test('cultivation openings use one collection and editable prompts are Chinese',
     }
   }
   for (const file of ['narrative', 'illustration', 'actor-state', 'rules', 'events']) check(JSON.parse(await readFile(`${root}/${file}.json`)));
+});
+
+test('cultivation recommends six playable characters and packages eight local material covers', async () => {
+  const root = 'examples/cultivation-starter';
+  const manifest = JSON.parse(await readFile(`${root}/denova-pack.json`));
+  const lore = JSON.parse(await readFile(`${root}/lore.json`));
+  const candidates = lore.items.filter(item => item.tags.includes('主角'));
+  assert.deepEqual(candidates.map(item => item.id), ['meng-chi', 'ji-hanzhang', 'gu-tingyun', 'song-wenqu', 'lu-zhaotang', 'zhu-qingyan']);
+  assert(candidates.every(item => item.enabled && item.type === 'character' && item.importance === 'major' && item.load_mode === 'auto'));
+  assert.equal(candidates.filter(item => /岁，男，/.test(item.content)).length, 4);
+  assert.equal(candidates.filter(item => /岁，女，/.test(item.content)).length, 2);
+  const assets = manifest.resources.find(resource => resource.id === 'lore').assets;
+  const illustrated = lore.items.filter(item => item.materials);
+  assert.equal(illustrated.length, 8);
+  assert.equal(illustrated.filter(item => item.type === 'character' && /岁，女，/.test(item.content)).length, 7);
+  const referenced = [];
+  for (const item of illustrated) {
+    const { entries, cover_asset_path } = item.materials;
+    assert(entries.some(entry => entry.asset_path === cover_asset_path));
+    for (const entry of entries) {
+      assert(entry.name && entry.description);
+      assert(assets.includes(entry.asset_path));
+      const png = await readFile(`${root}/${entry.asset_path}`);
+      assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+      const width = png.readUInt32BE(16), height = png.readUInt32BE(20);
+      assert(width >= 1024 && height >= 900);
+      assert(item.type === 'world' ? width > height : height > width);
+      referenced.push(entry.asset_path);
+    }
+  }
+  assert.deepEqual([...referenced].sort(), [...assets].sort());
+  assert(lore.items.find(item => item.id === 'world').materials.entries[0].name.includes('通用背景'));
 });

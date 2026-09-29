@@ -11,7 +11,7 @@ Install through **Resource market → Download and preview**. Resources inside e
 
 | Bundle | Contents | Requirements |
 | --- | --- | --- |
-| [照夜长河 · Cultivation World Simulation](examples/cultivation-starter) | 114 original lore entries across five regions and an immortal realm; progression from mortal life to ascension, sects, crafts, trade, usable technique progression and autonomous character development; prodigy and beauty rankings; three optional editable openings or custom/existing playable characters, eight trial/exploration sites, native state/rules and 18 event types | Choose a target book for lore/openings. Select the installed presets where applicable. Image generation requires an image model. |
+| [照夜长河 · Cultivation World Simulation](examples/cultivation-starter) | 114 original lore entries across five regions and an immortal realm; progression from mortal life to ascension, sects, crafts, trade, usable technique progression and autonomous character development; prodigy and beauty rankings; six recommended protagonists, four optional editable openings or custom/existing playable characters, seven female character portraits and a general background, eight trial/exploration sites, native state/rules and 18 event types | Choose a target book for lore/openings. Select the installed presets where applicable. Image generation requires an image model. |
 | [扩展示例 · Extension starter](examples/extension-starter) | General text-statistics plugin + **邻里来信 / Small Circle**, a messaging-style AI social game | The plugin requires Node.js. The game requires a text model and permissions for Agent sessions and its own save data. |
 
 [中文使用说明与内容清单](docs/examples.md)
