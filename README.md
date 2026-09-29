@@ -1,9 +1,26 @@
 # Denova index
 
-Public discovery metadata for Denova. Community packages stay in their authors' repositories; this repository also maintains a small set of working examples.
+Public discovery metadata for Denova. Community packages stay in their authors' repositories. This repository maintains **two original example bundles**.
 
 - Catalog: https://alfredxw.github.io/denova-index/index.json
 - Submit: https://github.com/alfredxw/denova-index/issues/new?template=package.yml
+
+## Examples
+
+Install through **Resource market → Download and preview**. Resources inside each bundle can be selected independently; opening dependencies are selected together.
+
+| Bundle | Contents | Requirements |
+| --- | --- | --- |
+| [青岚修仙 · Cultivation starter](examples/cultivation-starter) | One consolidated lore entry, 3 openings, narrative style, illustration preset with sample artwork, genre-independent book-analysis Skill | Choose a target book for lore/openings. Select the installed presets where applicable. Image generation requires an image model. |
+| [扩展示例 · Extension starter](examples/extension-starter) | General text-statistics plugin + **邻里来信 / Small Circle**, a messaging-style AI social game | The plugin requires Node.js. The game requires a text model and permissions for Agent sessions and its own save data. |
+
+[中文使用说明与内容清单](docs/examples.md)
+
+Cultivation lore and openings are original Chinese creative content. Model instructions use English and request the user's language. The game and plugin have Chinese/English UI resources. Book analysis works with any fiction genre and can be selected without the cultivation material.
+
+Small Circle includes three fictional contacts, private free-form conversations, public moments, likes, comments with AI replies, player-authored posts, streaming, cancellation and recovery. It uses Denova's configured model; it does not connect to a messaging service. The statistics plugin is independent and is not a game dependency. Characters count non-whitespace grapheme clusters; word segments are Unicode word boundaries, **not model tokens**.
+
+The former six market entries have been replaced. Existing user installations and saves are not deleted or converted. Small Circle has a new game identity; it does not open old Lantern Crossing saves. If the previous standalone statistics installation is still tracked, resolve its ownership through the app's import preview before installing that member of the new bundle.
 
 ## Contribute
 
@@ -13,51 +30,42 @@ Required fields: `id`, localized `name` and `description`, `author`, `format`, `
 
 Formats: `skill`, `extension.plugin`, `extension.game`, `denova.resource-pack`, `character_card`. GitHub sources use `kind: github`, repository `url`, explicit `ref`, and optional repository-relative `path`. ZIP sources use `kind: https_zip` and `url`. Never include credentials or commands.
 
-## Maintain
+## Maintain and verify
 
-Run `npm ci`, `npm test`, and `npm run build`. Entries are the sole maintained source; `dist/index.json` is generated. PR checks run offline. They validate metadata and test this repository's examples; they never fetch or execute third-party packages. Merges to `main` deploy to GitHub Pages; failed builds do not publish. Submission forms create issues; maintainers turn accepted requests into entry PRs.
+Use Node.js 24 or later:
 
-## Working examples
+```sh
+npm ci
+npm test
+npx playwright install chromium
+npm run test:browser
+npm run build
+```
 
-These are original, maintained examples, not copies of Denova's bundled Skills. Install through Resource market → Download and preview. Check the selected resources, target book and extension permissions before confirming.
+Unit checks cover catalog metadata, mixed file/directory payloads, resource dependencies, statistics, save conflicts, request recovery, incomplete runs and SSE decoding. Browser checks cover chat, moments, comments, likes, cancellation, reload, recipient drafts, both languages/themes and narrow/wide layouts. They use an isolated HTTP fixture with scripted replies; they never call a paid model or execute third-party packages. CI installs Chromium and runs both suites before publishing.
 
-| Package | Contents | Use |
-| --- | --- | --- |
-| [Quiet mystery](examples/quiet-mystery) | Narrative preset + prose reference | Restrained suspense; the prose dependency is included automatically. |
-| [Ink storyboards](examples/ink-storyboards) | Image preset | Monochrome ink scene illustrations; bring your own configured image model. |
-| [Tide harbor](examples/harbor-lore) | 3 lore items + 2 openings | Original Chinese harbor mystery; select a target book on import. |
-| [Story review](examples/story-review) | Skill | Evidence-based continuity and viewpoint critique; no automatic editing. |
-| [Text statistics](examples/text-statistics) | Plugin + pure tool | Enable its toolset for your Agent. Counts supplied text without file access or model calls. Requires Node.js. |
-| [Lantern crossing](examples/lantern-crossing) | Static game | Create a story with this game type. Seven scenes, two endings, automatic saves, English/Chinese and light/dark themes. No model needed. |
+`npm run preview` starts the **scripted development preview** at http://127.0.0.1:4381. It uses temporary in-memory data and test replies, not a live AI model. Set `PORT` to use another free port. For real play, install the bundle into Denova and configure the game's text model.
 
-Presets and Skills use English model instructions; the harbor lore is intentionally Chinese creative content. The game and plugin provide both English and Chinese UI strings. Word segments in Text statistics are Unicode word boundaries, not model tokens; characters count non-whitespace grapheme clusters.
-
-The index points to each example's directory on `main`. Denova freezes the repository commit during preview. When changing a published extension, increment its manifest version; update the entry date when its catalog description changes. The game uses revision-checked saves and blocks further choices after an unconfirmed write until saved progress is reloaded. It never overwrites an unreadable save.
+Entries are the sole maintained catalog source; `dist/index.json` is generated. Merges to `main` deploy to GitHub Pages; failed builds do not publish. Submission forms create issues; maintainers turn accepted requests into entry PRs. Sources point to each bundle directory on `main`; Denova freezes the commit during preview. Increment manifest versions for published extension changes and update the catalog date when its description changes.
 
 ## Verify with a Denova checkout
 
-Use a Denova build with resource-pack import and extension API v1. Unit checks here do not replace importing into the app. Optional integration tests in Denova own their temporary data and processes; do not point tests at your normal data directory.
+Use a checkout that implements resource-pack import and extension API v1:
 
-From the Denova checkout, set `DENOVA_INDEX_EXAMPLES_DIR` to this repository's absolute `examples` path and run:
+```sh
+npm run test:denova -- /absolute/path/to/denova
+```
+
+This uses Denova's real package importer to preview, install, export and re-preview both bundles. A Go test overlay then installs both extensions, opens the actual isolated game view, exercises Agent chat/comments and persistent reload in Chromium, and invokes the Node statistics plugin. The model is deterministic test code; no account configuration or real provider calls are used. All data belongs to temporary test projects. The overlay does not modify the Denova checkout.
+
+The native integration entry point remains available from that checkout:
 
 ```sh
 DENOVA_INDEX_EXAMPLES_DIR="$INDEX_REPO/examples" go test ./internal/app/resourceexchange -run TestIndexExamplesValidation -count=1 -v
 ```
 
-For the actual game view, create an archive from its directory (run in this repository):
-
-```sh
-python3 -m zipfile -c /tmp/denova-lantern-validation.zip examples/lantern-crossing
-```
-
-Then, from the Denova checkout:
-
-```sh
-DENOVA_MARKET_GAME_ZIP=/tmp/denova-lantern-validation.zip pnpm --dir web exec playwright test --project=e2e tests/e2e/resource-market-examples.spec.ts
-```
-
-Without these variables the cross-repository tests skip. The app's normal market browser tests remain self-contained.
+The older `resource-market-examples.spec.ts` in Denova targets the retired Lantern Crossing game and is not a validation entry point for these bundles.
 
 ## License
 
-Repository content and examples are Apache-2.0. `runtime.mjs` and `client.mjs` in the examples are unmodified copies of the Denova SDK; their source and attribution are in each package's `NOTICE`. Keep the included license and notice when redistributing them.
+Repository content and examples are Apache-2.0. SDK copies `runtime.mjs` and `client.mjs` are attributed in the extension `NOTICE` files. Keep the included licenses and notices when redistributing. The [example guide](docs/examples.md) records its ImageGen provenance and complete prompt.

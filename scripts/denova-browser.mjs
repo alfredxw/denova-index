@@ -1,0 +1,35 @@
+import { readFileSync } from 'node:fs';
+import { mkdir } from 'node:fs/promises';
+import { chromium, expect } from '@playwright/test';
+const { url } = JSON.parse(readFileSync(0, 'utf8'));
+const browser = await chromium.launch({ headless: true });
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const errors = []; page.on('pageerror', error => errors.push(error.message));
+  await page.goto(url);
+  const game = page.frameLocator('iframe');
+  await expect(game.locator('#send')).toBeEnabled({ timeout: 15000 });
+  await game.locator('#message').fill('你好，一起准备周末影展吧。');
+  await game.locator('#send').click();
+  await expect(game.locator('#status')).toHaveText('进度已保存', { timeout: 15000 });
+  await expect(game.locator('.message.assistant').last()).toHaveText('蔓Test response.');
+  await game.locator('#tab-moments').click();
+  const poster = game.locator('[data-post-id="poster"]');
+  await poster.getByRole('button', { name: '评论', exact: true }).click();
+  await game.locator('#comment-text').fill('海报叫街角如何？');
+  await game.locator('#comment-send').click();
+  await expect(poster.locator('.comments')).toContainText('Test response.', { timeout: 15000 });
+  await poster.getByRole('button', { name: '点赞', exact: true }).click();
+  await expect(poster.getByRole('button', { name: '已赞', exact: true })).toBeEnabled();
+  await game.locator('#post-text').fill('周六我来帮忙布展。');
+  await game.locator('#publish').click();
+  await expect(game.locator('.post-text').first()).toHaveText('周六我来帮忙布展。');
+  await page.reload(); await expect(game.locator('#send')).toBeEnabled({ timeout:15000 });
+  await game.locator('#tab-moments').click();
+  await expect(poster.locator('.comments')).toContainText('Test response.');
+  await expect(poster.getByRole('button', { name: '已赞', exact: true })).toBeVisible();
+  await mkdir('test-results/denova-runtime', { recursive:true });
+  await page.screenshot({ path:'test-results/denova-runtime/moments.png' });
+  expect(errors).toEqual([]);
+  console.log('Host runtime browser journey passed; deterministic model fixture used.');
+} finally { await browser.close(); }

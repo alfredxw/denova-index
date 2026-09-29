@@ -1,0 +1,87 @@
+{
+  "manifestVersion": 1,
+  "id": "index.small-circle",
+  "version": "1.0.0",
+  "apiMajor": 1,
+  "name": {
+    "zh-CN": "邻里来信",
+    "en-US": "Small Circle"
+  },
+  "description": {
+    "zh-CN": "搬进梧桐里，与三位邻居自由聊天、分享朋友圈，一起筹备周末街区影展。",
+    "en-US": "Meet three neighbors through chats and moments, and help prepare a weekend neighborhood photo exhibition."
+  },
+  "distribution": {
+    "files": [
+      "index.html",
+      "style.css",
+      "game.mjs",
+      "controller.mjs",
+      "state.mjs",
+      "stream.mjs",
+      "client.mjs",
+      "locales",
+      "agents",
+      "LICENSE",
+      "NOTICE"
+    ]
+  },
+  "views": [
+    {
+      "id": "main",
+      "source": {
+        "kind": "static",
+        "path": "index.html"
+      }
+    }
+  ],
+  "game": {
+    "viewId": "main",
+    "storage": {
+      "kind": "self",
+      "saveFormat": "small-circle-v1"
+    },
+    "uses": {
+      "agents": [
+        "local:lin",
+        "local:xu",
+        "local:tang"
+      ]
+    }
+  },
+  "definitions": {
+    "agents": [
+      {
+        "id": "lin",
+        "definition": "agents/lin.json"
+      },
+      {
+        "id": "xu",
+        "definition": "agents/xu.json"
+      },
+      {
+        "id": "tang",
+        "definition": "agents/tang.json"
+      }
+    ]
+  },
+  "modelSlots": [
+    {
+      "id": "chat",
+      "kind": "text",
+      "titleKey": "model.chat",
+      "required": true
+    }
+  ],
+  "permissions": {
+    "required": [
+      "gameData",
+      "agents.run"
+    ],
+    "optional": []
+  },
+  "locales": {
+    "zh-CN": "locales/zh-CN.json",
+    "en-US": "locales/en-US.json"
+  }
+}

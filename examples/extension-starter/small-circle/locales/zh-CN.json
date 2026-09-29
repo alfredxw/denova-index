@@ -1,0 +1,92 @@
+{
+  "title": "邻里来信",
+  "subtitle": "梧桐里 · 周末影展",
+  "model.chat": "角色对话模型",
+  "chats": "对话",
+  "moments": "朋友圈",
+  "exit": "返回 Denova",
+  "search": "搜索联系人",
+  "searchPlaceholder": "搜索名字或身份",
+  "noContacts": "没有找到联系人",
+  "you": "我",
+  "send": "发送",
+  "message": "发送消息",
+  "messagePlaceholder": "说点什么，故事从你的回复开始…",
+  "intro": "你刚搬进梧桐里。街角咖啡店准备办一场小影展，三位新邻居正等着听听你的想法。",
+  "fiction": "原创 AI 社交模拟",
+  "newPost": "发朋友圈",
+  "postPlaceholder": "分享今天的生活，或聊聊影展的想法…",
+  "publish": "发表",
+  "like": "点赞",
+  "liked": "已赞",
+  "comment": "评论",
+  "commentPlaceholder": "写下评论…",
+  "replyBy": "回复联系人",
+  "respond": "发送并邀请回复",
+  "emptyChat": "还没有聊天记录，先打个招呼吧。",
+  "older": "加载更早消息",
+  "loading": "正在连接…",
+  "ready": "进度已保存",
+  "thinking": "正在回复…",
+  "stop": "停止回复",
+  "stopping": "正在停止…",
+  "recover": "重新连接并恢复",
+  "failed": "回复未完成，已保留现有记录。可以发送新消息继续。",
+  "incomplete": "上次回复被中断，已保留记录。可以发送新消息继续。",
+  "waiting": "角色回复正在等待处理，可以停止后继续。",
+  "disconnected": "连接中断。请重新连接，恢复同一次请求。",
+  "saveError": "存档未确认保存。请重新连接，读取最新进度后继续。",
+  "loadError": "暂时无法读取游戏。请检查模型配置和扩展权限，再重新连接。",
+  "historyError": "历史消息加载失败，请重试。",
+  "invalidText": "请输入 1–4000 个字符。",
+  "cancel": "取消",
+  "back": "返回对话列表",
+  "unread": "未读",
+  "earlier": "开场动态",
+  "now": "刚刚",
+  "commentMissing": "回复暂时无法读取，重新连接后可恢复。",
+  "busy": "请等待当前操作完成。",
+  "contacts": {
+    "lin": {
+      "name": "林蔓",
+      "role": "楼上的设计师",
+      "initial": "蔓",
+      "greeting": "新邻居你好！周末影展的海报还缺个名字，你喜欢热闹一点，还是安静一点的？"
+    },
+    "xu": {
+      "name": "许宁",
+      "role": "街角咖啡店主",
+      "initial": "宁",
+      "greeting": "欢迎搬来梧桐里。周六下午来喝杯咖啡？顺便帮我看看窗边怎么挂照片。"
+    },
+    "tang": {
+      "name": "唐越",
+      "role": "刚回来的摄影师",
+      "initial": "越",
+      "greeting": "你好，我是唐越。影展选片选得有点犹豫，想找个没看过这些照片的人聊聊。"
+    }
+  },
+  "posts": [
+    {
+      "id": "poster",
+      "author": "lin",
+      "text": "海报改到第三版，终于决定先停下来。我们这场小影展，还缺一个让路过的人愿意进来坐坐的名字。你们有主意吗？",
+      "tag": "设计手记",
+      "art": "poster"
+    },
+    {
+      "id": "cafe",
+      "author": "xu",
+      "text": "把窗边的墙空出来了，六个木框也找齐了。周六下午，咖啡照常，照片慢慢看。先说好：过道一定要留给端咖啡的人。",
+      "tag": "街角日常",
+      "art": "cafe"
+    },
+    {
+      "id": "rain",
+      "author": "tang",
+      "text": "去年雨后的巷口。照片有点暗，但我一直舍不得删。十二张只能选六张，你会愿意为这样的画面停一下吗？",
+      "tag": "选片中",
+      "art": "rain"
+    }
+  ]
+}

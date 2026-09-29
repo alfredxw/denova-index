@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Small Circle · scripted browser fixture</title><style>body{margin:0;background:#181d19}iframe{border:0;width:100%;height:100dvh;display:block}</style></head>
+<body><iframe title="Game" src="/game/index.html"></iframe>
+<script>
+const frame = document.querySelector('iframe'), query = new URLSearchParams(location.search);
+window.addEventListener('message', event => {
+  if (event.source !== frame.contentWindow || event.origin !== location.origin) return;
+  if (event.data.type === 'denova:ready') frame.contentWindow.postMessage({
+    type:'denova:bootstrap', nonce:event.data.nonce,
+    connection:{baseUrl:location.origin+'/api',token:'local-test-fixture'},
+    context:{scope:{projectId:'fixture'},locale:query.get('locale')||'zh-CN',theme:query.get('theme')||'light',environment:'preview'}
+  },location.origin);
+});
+window.appearance = (locale,theme) => frame.contentWindow.postMessage({type:'denova:appearance',locale,theme},location.origin);
+</script></body></html>

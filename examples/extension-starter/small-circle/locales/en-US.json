@@ -1,0 +1,92 @@
+{
+  "title": "Small Circle",
+  "subtitle": "Wutong Lane · Weekend exhibition",
+  "model.chat": "Character chat model",
+  "chats": "Chats",
+  "moments": "Moments",
+  "exit": "Back to Denova",
+  "search": "Search contacts",
+  "searchPlaceholder": "Search name or role",
+  "noContacts": "No matching contacts",
+  "you": "Me",
+  "send": "Send",
+  "message": "Message",
+  "messagePlaceholder": "Say something. Your reply starts the story…",
+  "intro": "You just moved to Wutong Lane. The corner cafe is hosting a small photo exhibition, and three new neighbors would love your ideas.",
+  "fiction": "Original AI social simulation",
+  "newPost": "Share a moment",
+  "postPlaceholder": "Share your day or an idea for the exhibition…",
+  "publish": "Publish",
+  "like": "Like",
+  "liked": "Liked",
+  "comment": "Comment",
+  "commentPlaceholder": "Write a comment…",
+  "replyBy": "Reply from",
+  "respond": "Send and invite a reply",
+  "emptyChat": "No messages yet. Say hello.",
+  "older": "Load earlier messages",
+  "loading": "Connecting…",
+  "ready": "Progress saved",
+  "thinking": "Replying…",
+  "stop": "Stop reply",
+  "stopping": "Stopping…",
+  "recover": "Reconnect and recover",
+  "failed": "The reply did not finish. Existing records are safe; send a new message to continue.",
+  "incomplete": "The previous reply was interrupted. Records are retained; send a new message to continue.",
+  "waiting": "The reply is waiting for input. You can stop it and continue.",
+  "disconnected": "Connection lost. Reconnect to recover the same request.",
+  "saveError": "The save was not confirmed. Reconnect and load the latest progress before continuing.",
+  "loadError": "Unable to load the game. Check the model and extension permissions, then reconnect.",
+  "historyError": "Unable to load messages. Please try again.",
+  "invalidText": "Enter between 1 and 4,000 characters.",
+  "cancel": "Cancel",
+  "back": "Back to conversations",
+  "unread": "Unread",
+  "earlier": "Opening moment",
+  "now": "Just now",
+  "commentMissing": "This reply could not be loaded. Reconnect to recover it.",
+  "busy": "Wait for the current operation to finish.",
+  "contacts": {
+    "lin": {
+      "name": "Lin Man",
+      "role": "The designer upstairs",
+      "initial": "L",
+      "greeting": "Hey, new neighbor! Our weekend exhibition needs a name. Would you go for something lively or something quiet?"
+    },
+    "xu": {
+      "name": "Xu Ning",
+      "role": "Corner cafe owner",
+      "initial": "X",
+      "greeting": "Welcome to Wutong Lane. Coffee on Saturday? You could help me figure out how to hang photos by the window."
+    },
+    "tang": {
+      "name": "Tang Yue",
+      "role": "The returning photographer",
+      "initial": "T",
+      "greeting": "Hi, I'm Tang. I'm stuck choosing photos for the exhibition. A fresh pair of eyes might help."
+    }
+  },
+  "posts": [
+    {
+      "id": "poster",
+      "author": "lin",
+      "text": "Three poster drafts later, I'm taking a break. Our little exhibition still needs a name that makes a passerby want to come in and stay awhile. Ideas?",
+      "tag": "Design notes",
+      "art": "poster"
+    },
+    {
+      "id": "cafe",
+      "author": "xu",
+      "text": "The window wall is clear. Found six wooden frames, too. Saturday afternoon: coffee as usual, photos at your own pace. One rule—leave room for the person carrying the coffee.",
+      "tag": "Around the corner",
+      "art": "cafe"
+    },
+    {
+      "id": "rain",
+      "author": "tang",
+      "text": "The alley after last year's rain. This photo is a little dark, but I can't let it go. Twelve photos, six spaces. Would this one make you stop for a moment?",
+      "tag": "Choosing photos",
+      "art": "rain"
+    }
+  ]
+}

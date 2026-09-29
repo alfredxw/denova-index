@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>邻里来信 · Small Circle</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main id="app" data-view="chats">
+  <nav class="rail" aria-label="Small Circle">
+    <div class="brand-mark" aria-hidden="true">◈</div>
+    <button id="tab-chats" class="nav-button" type="button"><span aria-hidden="true">☏</span><span data-t="chats"></span></button>
+    <button id="tab-moments" class="nav-button" type="button"><span aria-hidden="true">◎</span><span data-t="moments"></span></button>
+    <button id="exit" class="exit-button" data-t="exit" type="button"></button>
+  </nav>
+  <aside class="sidebar">
+    <header class="sidebar-header"><p class="eyebrow" data-t="fiction"></p><h1 data-t="title"></h1><p class="muted" data-t="subtitle"></p></header>
+    <div class="search-wrap"><input id="search" type="search" autocomplete="off"></div>
+    <div id="contacts" class="contacts"></div>
+    <div class="sidebar-note"><span class="leaf" aria-hidden="true">✳</span><p data-t="intro"></p></div>
+  </aside>
+  <section class="workspace">
+    <section id="chat-view" class="view">
+      <header class="chat-header"><button id="back" class="icon-button" type="button">←</button><div id="chat-avatar"></div><div><h2 id="chat-name"></h2><p id="chat-role" class="muted"></p></div><span class="online-dot" aria-hidden="true"></span></header>
+      <div id="messages" class="messages" role="log" aria-live="off"></div>
+      <form id="chat-form" class="composer"><label class="sr-only" for="message" data-t="message"></label><textarea id="message" rows="2" maxlength="4000"></textarea><div class="compose-actions"><span class="muted" data-t="fiction"></span><button id="send" class="primary" type="submit" data-t="send"></button></div></form>
+    </section>
+    <section id="moments-view" class="view" hidden>
+      <header class="moments-header"><div><p class="eyebrow" data-t="subtitle"></p><h2 data-t="moments"></h2></div><span class="moment-symbol" aria-hidden="true">◎</span></header>
+      <form id="post-form" class="post-composer"><label for="post-text" data-t="newPost"></label><textarea id="post-text" rows="2" maxlength="4000"></textarea><button class="primary" id="publish" type="submit" data-t="publish"></button></form>
+      <div id="feed" class="feed"></div>
+    </section>
+    <footer class="status-bar"><p id="status" role="status" aria-live="polite"></p><button id="recover" type="button" data-t="recover" hidden></button><button id="stop" type="button" data-t="stop" hidden></button></footer>
+  </section>
+</main>
+<dialog id="comment-dialog"><form id="comment-form"><h2 data-t="comment"></h2><p id="comment-target" class="comment-target"></p><label for="reply-contact" data-t="replyBy"></label><select id="reply-contact"></select><label class="sr-only" for="comment-text" data-t="comment"></label><textarea id="comment-text" rows="4" maxlength="4000"></textarea><div class="dialog-actions"><button id="close-comment" type="button" data-t="cancel"></button><button id="comment-send" class="primary" type="submit" data-t="respond"></button></div></form></dialog>
+<script type="module" src="game.mjs"></script>
+</body></html>

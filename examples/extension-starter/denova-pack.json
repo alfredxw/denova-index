@@ -1,0 +1,23 @@
+{
+  "format": "denova.resource-pack",
+  "schema_version": 1,
+  "package": {
+    "id": "extension-starter",
+    "name": "扩展示例 · 文本统计与邻里来信",
+    "description": "一个通用文本统计插件，以及带私聊和朋友圈的 AI 社交模拟游戏。两个扩展可独立选装。",
+    "version": "1.0.0",
+    "author": "alfredxw"
+  },
+  "resources": [
+    {
+      "id": "text-statistics",
+      "kind": "extension.plugin",
+      "path": "text-statistics"
+    },
+    {
+      "id": "small-circle",
+      "kind": "extension.game",
+      "path": "small-circle"
+    }
+  ]
+}

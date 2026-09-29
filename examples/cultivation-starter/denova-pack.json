@@ -1,0 +1,60 @@
+{
+  "format": "denova.resource-pack",
+  "schema_version": 1,
+  "package": {
+    "id": "cultivation-starter",
+    "name": "青岚修仙 · 创作起步包",
+    "description": "传统修仙资料、三种开场、叙事与插图风格，以及可独立使用的通用拆书 Skill。",
+    "version": "1.0.0",
+    "author": "alfredxw"
+  },
+  "resources": [
+    {
+      "id": "lore",
+      "kind": "lore.item",
+      "path": "lore.json"
+    },
+    {
+      "id": "sect-entry",
+      "kind": "game.opening",
+      "path": "openings/sect-entry.json",
+      "requires": [
+        "lore"
+      ]
+    },
+    {
+      "id": "wandering-start",
+      "kind": "game.opening",
+      "path": "openings/wandering-start.json",
+      "requires": [
+        "lore"
+      ]
+    },
+    {
+      "id": "clan-start",
+      "kind": "game.opening",
+      "path": "openings/clan-start.json",
+      "requires": [
+        "lore"
+      ]
+    },
+    {
+      "id": "narrative",
+      "kind": "preset.narrative",
+      "path": "narrative.json"
+    },
+    {
+      "id": "illustration",
+      "kind": "preset.image",
+      "path": "illustration.json",
+      "assets": [
+        "assets/qinglan-irrigation.png"
+      ]
+    },
+    {
+      "id": "book-analysis",
+      "kind": "skill",
+      "path": "skills/book-analysis"
+    }
+  ]
+}
