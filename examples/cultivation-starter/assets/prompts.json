@@ -3,41 +3,52 @@
   "images": [
     {
       "id": "lu-zhaotang",
-      "prompt": "Use case: illustration-story. 从零生成一张全新原创仙侠女性角色封面，不编辑或延续任何旧图片。竖幅2:3，单人，头部完整。视觉风格：高品质国风幻想游戏角色插画，偏唯美二次元与细腻半写实之间，柔滑清透肤质、晶莹眼神、细腻发丝、精致织物、柔和辉光、轻盈仙气；不是写实古装剧照。人物外貌为18至22岁年轻成年女性，少女感、灵动鲜活，无成熟沧桑面容。画面无文字、标志、水印、拼图。优先独立设计鲜明个性和独特面部，不能套统一网红脸。角色陆照棠，元气爽朗的散修侠女。短圆脸、圆杏眼、稍粗短眉、小翘鼻、带一点虎牙的灿烂笑容，健康暖白肤色。黑发扎高马尾，青色布带飘起，鬓边俏皮碎发。青绿窄袖短外衣搭米白内衫，实用腰带与旧皮护腕，腰侧一柄有旧痕的短剑，衣服干净有少量修补，绝不褴褛。全新动态构图：午后溪边青石上蹲坐稍微前倾，一手拿刚摘的草叶，一手自然搭在膝上，仰脸看观者，好像刚讲了一个笑话。山间清溪、竹林和明亮光斑，春日草木绿与暖金色，活泼灵动的游侠气质，膝上到全身自然取景。",
-      "revision": 3,
-      "mode": "generate"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 陆照棠: keep lively smile, green high ponytail ribbons, green/ivory wanderer costume, leather bracers and short sword, leaf in raised hand, relaxed crouching pose. Give fitted green vest and slightly more open collar.",
+      "revision": 4,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "zhu-qingyan",
-      "prompt": "Use case: illustration-story. 从零生成一张全新原创仙侠女性角色封面，不编辑或延续任何旧图片。竖幅2:3，单人，头部完整。视觉风格：高品质国风幻想游戏角色插画，偏唯美二次元与细腻半写实之间，柔滑清透肤质、晶莹眼神、细腻发丝、精致织物、柔和辉光、轻盈仙气；不是写实古装剧照。人物外貌为18至22岁年轻成年女性，少女感、灵动鲜活，无成熟沧桑面容。画面无文字、标志、水印、拼图。优先独立设计鲜明个性和独特面部，不能套统一网红脸。角色祝清砚，清冷内敛而倔强的年轻剑修。纤巧小鹅蛋脸、秀气短下巴、细直眉、细长清冷的单眼皮眼型、低柔小鼻梁、小巧薄唇，目光专注略微不服输，无笑容，脸颊白净饱满。顺直黑色长发散在肩后，仅一根简单木簪半束，齐眉稀薄刘海。朴素雪白长衣，袖口有细小补线，浅灰蓝腰带，没有华丽首饰。全新构图：坐在竹林庭院的石阶上，双膝自然侧向，一柄朴素长剑横放膝前，右手轻握剑柄，左手整理衣袖，忽然抬眼望向观者；动作有克制的少女气。细雨刚停，竹叶凝露，远处简陋屋檐与安静小院，柔和薄雾与淡青白色。安静诗意、清秀年轻的国风插画，半身至膝构图。",
-      "revision": 3,
-      "mode": "generate"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 祝清砚: keep cool composed face, long black hair with simple wood pin, white robes, gray-blue sash, sword across knees and seated pose. Gently lower draped collar to show collarbones and one shoulder, fitted waist, refined opaque white dress.",
+      "revision": 4,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "ruan-feizhou",
-      "prompt": "Use case: illustration-story. 原创中国仙侠小说人物封面插画，统一精致半写实国风、细腻笔触、自然光与层叠水墨背景，竖幅2:3，单个成年女性，膝上构图，面容清晰，头顶及两侧留裁切空间，服装完整得体，人物有辨识度，非照片非Q版。无文字、标志、水印、拼图、现代物件。阮绯舟，26岁合欢宗女弟子，红衣外披素纱，指间轻转玉环，直视观者自信明艳的笑，优雅灵动但有修行者的力量感，镜湖花坞与桃花虚景，红与淡金。"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 阮绯舟: keep confident smile, red/gold hair ornaments, jade ring in hand, red/gold dress and pale gauze. Preserve bare shoulders and elegant leg slit, make waist more fitted. Keep character and jade ring only.",
+      "revision": 2,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "liu-tingchan",
-      "prompt": "Use case: illustration-story. 原创中国仙侠小说人物封面插画，统一精致半写实国风、细腻笔触、自然光与层叠水墨背景，竖幅2:3，单个成年女性，膝上构图，面容清晰，头顶及两侧留裁切空间，服装完整得体，人物有辨识度，非照片非Q版。无文字、标志、水印、拼图、现代物件。柳听蝉，成年女性，外貌约三十余岁，合欢宗授业执事，青黛衣衫，腕上一串木珠，沉静从容的成熟面容，半侧身在廊下停下转珠倾听，简洁课堂与竹影虚景，青黛与木色。"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 柳听蝉: keep mature adult face, teal hair jewelry, dark teal embroidered robe, wooden prayer beads and calm three-quarter pose. Remove railing she leans on, rest arm gracefully near waist. Elegant wider neckline revealing collarbones, tailored waist, opaque bodice.",
+      "revision": 2,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "hua-zhining",
-      "prompt": "Use case: illustration-story. 从零生成一张全新原创仙侠女性角色封面，不编辑或延续任何旧图片。竖幅2:3，单人，头部完整。视觉风格：高品质国风幻想游戏角色插画，偏唯美二次元与细腻半写实之间，柔滑清透肤质、晶莹眼神、细腻发丝、精致织物、柔和辉光、轻盈仙气；不是写实古装剧照。人物外貌为18至22岁年轻成年女性，少女感、灵动鲜活，无成熟沧桑面容。画面无文字、标志、水印、拼图。优先独立设计鲜明个性和独特面部，不能套统一网红脸。角色花知宁，驻颜年轻的仙门女宗主。外貌约20岁，娇俏精致的短心形脸、饱满脸颊、小巧下巴，弯柳眉、眼尾轻挑的桃花眼、小鼻、清晰唇峰，带一点狡黠又胸有成竹的浅笑。长黑发柔顺垂落，以细辫和一枚小红玉花簪固定，不盘高贵妇发髻。简洁绛红交领长衣，少量暗色织花、细金腰带，优雅纤细而非厚重华服。全新构图：立于月下花园的朱栏旁，身体四分之三转向，手中随意拈一片花瓣，另一手搭着栏杆，看向观者仿佛已听懂对方的心事。夜色花园、浅紫花树、暖色小灯、远处水面月光，深红与紫蓝的轻盈梦幻配色，脸上有明亮柔光。半身封面，少女外貌与从容眼神并存，不坐宝座、不托腮。",
-      "revision": 3,
-      "mode": "generate"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 花知宁: keep adult face, red flower hairpin, red embroidered robe, petal held in raised hand and three-quarter turn. Remove railing and lower free hand gracefully at waist. Draped off-one-shoulder neckline, fitted waist, opaque red bodice.",
+      "revision": 4,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "su-wanhe",
-      "prompt": "Use case: illustration-story. 从零生成一张全新原创仙侠角色苏晚禾的女性封面，非旧图编辑。竖幅2:3，单个年轻成年女性，外貌18至20岁，有少女感。高品质国风幻想游戏插画，唯美二次元与细腻半写实融合，清透柔滑肤质、晶莹眼睛、精细发丝织物、柔和辉光，不是古装剧照。苏晚禾是独立摆摊的年轻丹修，亲切鲜活、有点嘴硬和倔强。独特脸部：饱满小鹅蛋脸带自然圆润下颌，稍下垂的温柔杏眼、柔弯眉、小鼻、自然淡粉唇，微抿唇藏不住一点得意，一侧浅酒窝，脸颊淡淡红晕；不能画成熟长脸、浓妆厚唇、疲惫或凹陷脸。黑发用两根竹筷松松挽成偏低发髻，有俏皮轻薄碎刘海和耳边散发，不是高马尾。衣着为干净朴素的杏黄短外衣、奶白交领内衫和浅草绿围腰，袖口卷到肘部，实用而年轻清新，不破旧脏污。全新场景与构图：她站在自己的小药铺窗边柜台后，微微前倾，双手将一个铺着白纸的浅木盘向客人展示，盘中几颗朴素浅金丹药，仿佛期待客人认可她刚炼好的成果；手指自然完整。镜头从客人视角看她，人物半身至腰、脸清晰完整留白，木盘在下方不过度遮身。窗外是晴日古镇和嫩绿藤叶，身后小药柜、陶罐与药草，侧边小丹炉有轻微蒸汽，日光从侧面照亮脸和衣袖。奶油黄、浅绿与暖木色，温暖干净的烟火气，有轻盈仙气。不要复刻持丹靠脸的旧姿势，不要长剑、弓、红衣与奢华首饰，不要文字、招牌字样、标志、水印、拼图。",
-      "revision": 2,
-      "mode": "generate"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 苏晚禾: keep cheerful adult face, bamboo hair sticks, pale yellow/ivory costume, green sash and tray of golden pills held in both hands. Remove counter and apothecary completely. Refine fitted waist and graceful collarbones in modestly lower wrap neckline. Include finished skirt below tray so cutout has natural clothing outline.",
+      "revision": 3,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "pei-zhaoxue",
-      "prompt": "Use case: illustration-story. 从零生成一张全新原创仙侠女性角色封面，不编辑或延续任何旧图片。竖幅2:3，单人，头部完整。视觉风格：高品质国风幻想游戏角色插画，偏唯美二次元与细腻半写实之间，柔滑清透肤质、晶莹眼神、细腻发丝、精致织物、柔和辉光、轻盈仙气；不是写实古装剧照。人物外貌为18至22岁年轻成年女性，少女感、灵动鲜活，无成熟沧桑面容。画面无文字、标志、水印、拼图。优先独立设计鲜明个性和独特面部，不能套统一网红脸。角色裴照雪，英气清爽的年轻女弓修。柔和短方脸、有辨识度的下颌角、平直浓眉、略窄明亮内双眼、直鼻、自然薄唇，坚定专注的视线，不媚笑。乌黑长发扎干练高束马尾，无头冠，简洁银扣。白色修身劲装外搭轻薄银灰护肩护臂，浅蓝腰绦和短披风，腰身利落。全新构图：站在海边木舟船首，身体正面偏侧，手握一柄弧线优美的银弓垂在身体一侧，望向画面外的远海，海风吹起马尾与披风。远海碧蓝、水光明亮、鸥鸟与白帆，清澈蓝白配色，朝阳照亮面部。中远景膝上人物，开阔爽朗的冒险感。",
-      "revision": 3,
-      "mode": "generate"
+      "prompt": "Use case: background-extraction. Edit target: supplied existing portrait. Produce a genuinely transparent RGBA PNG character layer for compositing over arbitrary game backgrounds. Keep the same adult woman's exact recognizable face, hairstyle, expression, colors, illustration rendering and signature held equipment. All characters are adults age 21+. Remove ALL landscape, architecture, furniture, ground, water, plants, birds, atmospheric background and detached petals. Preserve only the woman, clothing, hair, worn gear and hand-held items. No painted checkerboard, no white or solid backdrop, no floor shadow or background halo. Refine clothing to be moderately more sensual: flattering fitted waist, graceful exposed collarbones, tasteful neckline, fully opaque bust coverage. Preserve personality, no nudity. Portrait 2:3; complete head and flowing hair, hands and props inside frame with transparent margins; extend any formerly occluded clothing naturally. Maintain softly neutral lighting suitable for many environments. 裴照雪: keep determined adult face, high ponytail, white/silver light armor, pale blue ribbons and cloak, silver bow and quiver. Remove ship and sea. Fit white tunic to athletic waist, tasteful open neckline exposing collarbones, elegant existing thigh slit; maintain warrior identity.",
+      "revision": 4,
+      "mode": "edit",
+      "transparent_background": true
     },
     {
       "id": "long-river-background",
