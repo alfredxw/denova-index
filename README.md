@@ -11,7 +11,7 @@ Install through **Resource market → Download and preview**. Resources inside e
 
 | Bundle | Contents | Requirements |
 | --- | --- | --- |
-| [照夜长河 · Cultivation World Simulation](examples/cultivation-starter) | 114 original lore entries across five regions and an immortal realm; progression from mortal life to ascension, sects, crafts, trade, usable technique progression and autonomous character development; prodigy and beauty rankings; six recommended protagonists, four optional editable openings or custom/existing playable characters, seven female character portraits and a general background, eight trial/exploration sites, native state/rules and 18 event types | Choose a target book for lore/openings. Select the installed presets where applicable. Image generation requires an image model. |
+| [照夜长河 · Cultivation World Simulation](examples/cultivation-starter) | 78 original lore entries across five regions and an immortal realm; progression from mortal life to ascension, sects, crafts, trade and autonomous character development; prodigy and beauty rankings; six recommended protagonists, four optional editable openings or custom/existing playable characters, seven female character portraits and a general background, six trial/exploration sites, native state/rules and 18 event types | Choose a target book for lore/openings. Select the installed presets where applicable. Image generation requires an image model. |
 | [扩展示例 · Extension starter](examples/extension-starter) | General text-statistics plugin + **邻里来信 / Small Circle**, a messaging-style AI social game | The plugin requires Node.js. The game requires a text model and permissions for Agent sessions and its own save data. |
 
 [中文使用说明与内容清单](docs/examples.md)
@@ -90,12 +90,10 @@ Use Node.js 24 or later:
 ```sh
 npm ci
 npm test
-npx playwright install chromium
-npm run test:browser
 npm run build
 ```
 
-Unit checks cover catalog metadata, mixed file/directory payloads, resource dependencies, statistics, save conflicts, request recovery, incomplete runs and SSE decoding. Browser checks cover chat, moments, comments, likes, cancellation, reload, recipient drafts, both languages/themes and narrow/wide layouts. They use an isolated HTTP fixture with scripted replies; they never call a paid model or execute third-party packages. CI installs Chromium and runs both suites before publishing.
+Tests cover catalog validation and package manifest resolution. CI runs these checks and builds the catalog before publishing.
 
 `npm run preview` starts the **scripted development preview** at http://127.0.0.1:4381. It uses temporary in-memory data and test replies, not a live AI model. Set `PORT` to use another free port. For real play, install the bundle into Denova and configure the game's text model.
 
@@ -108,24 +106,6 @@ GitHub Actions rebuilds on merges to `main`, manual dispatch, and every six hour
 Submission forms create issues; maintainers turn accepted requests into registration PRs. The single package manifest and payloads stay in the package repository.
 
 Sources point to each bundle directory on `main`; Denova freezes the commit during preview. Increment manifest versions for published extension changes.
-
-## Verify with a Denova checkout
-
-Use a checkout that implements resource-pack import and extension API v1:
-
-```sh
-npm run test:denova -- /absolute/path/to/denova
-```
-
-This uses Denova's real package importer to preview, install, export and re-preview both bundles. A Go test overlay then installs both extensions, opens the actual isolated game view, exercises Agent chat/comments and persistent reload in Chromium, and invokes the Node statistics plugin. The model is deterministic test code; no account configuration or real provider calls are used. All data belongs to temporary test projects. The overlay does not modify the Denova checkout.
-
-The native integration entry point remains available from that checkout:
-
-```sh
-DENOVA_INDEX_EXAMPLES_DIR="$INDEX_REPO/examples" go test ./internal/app/resourceexchange -run TestIndexExamplesValidation -count=1 -v
-```
-
-The older `resource-market-examples.spec.ts` in Denova targets the retired Lantern Crossing game and is not a validation entry point for these bundles.
 
 ## License
 

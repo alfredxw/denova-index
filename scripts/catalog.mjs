@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-const kinds = new Set(['preset.narrative', 'preset.image', 'preset.game_planning', 'preset.events', 'preset.rules', 'preset.actor_state', 'style.reference', 'skill', 'lore.collection', 'game.openings', 'project.cover', 'extension.plugin', 'extension.game'])
+const kinds = new Set(['preset.narrative', 'preset.image', 'preset.game_planning', 'preset.events', 'preset.rules', 'preset.actor_state', 'style.reference', 'skill', 'lore.collection', 'game.openings', 'project.cover', 'project.creator', 'extension.plugin', 'extension.game'])
 const formats = new Set(['skill', 'extension.plugin', 'extension.game', 'denova.resource-pack', 'character_card'])
 const idPattern = /^[a-z0-9][a-z0-9_-]{0,127}$/
 function localized(value) {

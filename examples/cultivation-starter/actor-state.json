@@ -1,114 +1,114 @@
 {
-  "name": "照夜长河 · 修行与交游",
-  "description": "以原生状态延续时历、寿元、修为、消耗、宗门身份与长期交游；世界结果保存在本故事记录中。",
+  "name": "照夜长河 · 行卷",
+  "description": "记下时历、修为、伤势、财物与交游；故事的果，留在故事里。",
   "actor_state": {
     "templates": [
       {
         "id": "cultivator",
         "name": "修行者",
-        "description": "凡人与各境修士共用。初始值以用户自定义角色、选定人物及其确认的修改，或已选开局预设为准；不强制从凡人或低阶弟子开始，未确认信息留待确认。",
+        "description": "凡人与各境修士共用。初始值以自创人物、选定人物或所选开局为准，不强制低阶起步，未确认者留待确认。",
         "fields": [
           {
             "name": "境界",
             "type": "string",
-            "description": "本故事已确认的当前境界，不受资料参考境界限制。",
-            "update_instruction": "实际突破、跌境或初始化后更新，并延续新能力与寿元；读取资料或再次相遇不得覆盖已确认进展，不跨故事线同步。",
+            "description": "本故事已确认的境界，不受资料参考境界限制。",
+            "update_instruction": "突破或跌境后更新，延续新能力与寿元；不被重读资料覆盖，不跨故事同步。",
             "group": "修行",
             "display": "inline"
           },
           {
             "name": "功法与进度",
             "type": "list",
-            "description": "当前修为积累、已学功法的掌握程度、招式用法及剩余瓶颈。",
-            "update_instruction": "分别记录修为条件与功法初学、熟练、精通及其事实依据，完整替换列表并保留已学用法；持有秘籍不等于掌握，已完成的积累不无故重置。",
+            "description": "修为积累，及各门功法初学、熟练、精通的进展。",
+            "update_instruction": "有秘籍不等于已掌握，已完成的积累不重置。",
             "group": "修行",
             "display": "list"
           },
           {
             "name": "位置",
             "type": "string",
-            "description": "当前所在地域及具体位置。",
-            "update_instruction": "实际行旅后更新，同时考虑路程耗时与进入条件。",
+            "description": "当前地域与具体所在。",
+            "update_instruction": "行旅后更新，计入路程耗时。",
             "group": "行踪",
             "display": "inline"
           },
           {
             "name": "伤势",
             "type": "list",
-            "description": "现有伤势及其可观察到的行动限制。",
-            "update_instruction": "保留全部未愈伤势及本源损伤，有真实恢复依据后移除；已确认死亡不得无条件复活。",
+            "description": "未愈伤势及其行动限制，含本源损伤。",
+            "update_instruction": "有真实恢复依据后移除；死者不无条件复活。",
             "group": "身体",
             "display": "list"
           },
           {
             "name": "财物",
             "type": "list",
-            "description": "分币种的钱财，以及注明数量的装备与消耗品。",
-            "update_instruction": "交易或消耗确实发生后提交完整行装；不同币种分别记录。",
+            "description": "分币种的钱，及注明数量的装备与消耗品。",
+            "update_instruction": "交易或消耗实际发生后更新，币种分记。",
             "group": "行装",
             "display": "list"
           },
           {
             "name": "约定",
             "type": "list",
-            "description": "已经接受的义务、对方身份、具体条款与期限。",
-            "update_instruction": "只记录实际作出的承诺；有人提出委托不等于玩家已经接下。",
+            "description": "已经接下的义务、对方、条款与期限。",
+            "update_instruction": "只记实际作出的承诺，委托不等于接下。",
             "group": "关系",
             "display": "list"
           },
           {
             "name": "交游",
             "type": "list",
-            "description": "重要关系、合作分工及建立信任或冲突的具体经历。",
-            "update_instruction": "依据共同经历记录已经确认的变化，不凭一次赠礼推断同意或忠诚。",
+            "description": "重要关系、分工，及建立信任或冲突的经历。",
+            "update_instruction": "依共同经历更新，不因一次赠礼推定忠诚。",
             "group": "关系",
             "display": "list"
           },
           {
             "name": "时历",
             "type": "string",
-            "description": "本故事已确认的年份、季节或日期；沿用用户设定或已选预设，未定时不擅自指定历元。",
-            "update_instruction": "只随实际耗时推进，跨月跨年同步年龄、供给与已到期约定；不从现实时间推断。",
+            "description": "本故事已确认的年季日期，未定时不擅定历元。",
+            "update_instruction": "只随实际耗时推进，跨月跨年同步年龄与约定。",
             "group": "行踪",
             "display": "inline"
           },
           {
             "name": "年龄与寿元",
             "type": "string",
-            "description": "已确认年龄、当前境界常见寿元及已知折损；未知年龄标注未定。",
-            "update_instruction": "时间增长年龄，突破调整可活总年限而非年龄归零；不将估计余寿记成精确死期。",
+            "description": "已确认年龄、当前境界寿数与已知折损。",
+            "update_instruction": "时间长年龄，突破延寿而非归零；余寿不是精确死期。",
             "group": "身体",
             "display": "inline"
           },
           {
             "name": "灵根与体质",
             "type": "list",
-            "description": "经过玩家确认或实际检测的资质、适配与限制。",
-            "update_instruction": "未定时明确未定；只在有依据的检测或真实改变后更新，不自动添加隐藏血脉。",
+            "description": "经确认或测定的资质、适配与限制。",
+            "update_instruction": "未定即写未定，不自动添加隐藏血脉。",
             "group": "修行",
             "display": "list"
           },
           {
             "name": "灵力与心神",
             "type": "string",
-            "description": "可观察的灵力、神识消耗与恢复情况，以及影响行动的限制。",
-            "update_instruction": "持续施法与休养后据实更新，禁术本源损伤同步伤势；不引入固定战力或万能百分比。",
+            "description": "可观察的灵力、神识消耗与恢复。",
+            "update_instruction": "持续施法与休养后据实更新，不引入战力数值。",
             "group": "身体",
             "display": "inline"
           },
           {
             "name": "身份与贡献",
             "type": "list",
-            "description": "当前宗门、师承、职役、已确认权限与分别记账的贡献余额。",
-            "update_instruction": "入门、晋升、离宗及奖惩实际发生后更新；不同组织贡献不混用，离宗按约定结算。",
+            "description": "宗门、师承、职役、权限与分账记录的贡献。",
+            "update_instruction": "入门、晋升、离宗实际发生后更新，各组织贡献不混用。",
             "group": "关系",
             "display": "list"
           },
           {
             "name": "洞府与产业",
             "type": "list",
-            "description": "已拥有或承租的地点、经营项目、维护供给、受托者与分配约定。",
-            "update_instruction": "只记录已落实的权益，长期推进时结算合理净收益与成本，不按持有时间自动无限生财。",
+            "description": "拥有或承租的地点、经营项、受托者与分成。",
+            "update_instruction": "只记已落实权益，长期推进结算净收益与成本。",
             "group": "行装",
             "display": "list"
           }

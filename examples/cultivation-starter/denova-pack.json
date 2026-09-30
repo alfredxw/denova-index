@@ -4,8 +4,8 @@
   "package": {
     "id": "cultivation-starter",
     "name": "照夜长河 · 大世界修仙模拟",
-    "description": "五域与仙界的大世界修仙模拟：修炼、功法、宗门、百艺经营与探索形成持续成长，天骄与绝色两榜连接声望和交游。可自创或扮演既有人物，附六位推荐主角、四种可编辑开局、七位女性人物封面与通用背景、原生状态与十八类际遇。内容五万字以内。",
-    "version": "2.1.0",
+    "description": "五域与仙界的修仙大世界：修炼、争锋、百艺、经营与飞升各有分量。三十一份人物卡写尽外貌、功法、体质、事迹与情缘倾向；六位推荐主角、四种可编辑开局、七位女性人物封面与通用背景，配原生状态与十八类际遇。全文五万字以内，以意象立世界，只留必要规则。",
+    "version": "2.2.0",
     "author": "alfredxw",
     "locale": "zh-CN",
     "tags": [
@@ -14,14 +14,14 @@
       "cultivation",
       "images"
     ],
-    "usage": "导入世界资料到目标作品，在创作方案中选用相应预设。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书 Skill 可独立使用。 推荐主角含孟迟、纪含章、顾停云、宋问渠、陆照棠、祝清砚。扮演既有人物可选“既有人物·此刻启程”。导入后可在故事的默认背景中选择“照夜长河·通用背景”。",
-    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。 人物封面与通用背景使用资料素材集合，需要支持资料素材与故事默认背景的版本；导入不自动修改故事背景设置。",
+    "usage": "导入世界资料到目标作品，可将推荐搭配采用为本书的新故事默认配置，预选通用背景、叙事风格、状态、规则、事件和插图方案；各项仍可调整。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书 Skill 可独立使用。 推荐主角含孟迟、纪含章、顾停云、宋问渠、陆照棠、祝清砚。扮演既有人物可选“既有人物·此刻启程”。普通导入不会改动本书默认配置；从资源包创建新书时推荐搭配默认勾选，可取消。已有故事不受影响，包更新不会重新应用默认配置。",
+    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。 人物封面与通用背景使用资料素材集合，需要支持资料素材、故事背景及资源包推荐默认配置的版本；仅在用户采用后预填新故事，不修改已有故事，不开启自动生图。",
     "translations": {
       "en-US": {
         "name": "Lanterns of the Long River · Cultivation World Simulation",
-        "description": "An open-world cultivation simulation across five regions and an immortal realm. Practice, techniques, sects, crafts, trade and exploration produce lasting growth; prodigy and beauty rankings connect reputation and relationships. Play custom or existing characters, with six recommended protagonists, four optional editable openings, seven female character portraits and a general background, native state and eighteen event types. Chinese content stays below 50,000 characters.",
-        "usage": "Import the world lore into a book and select the relevant presets. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis Skill works independently. Use the existing-character opening when playing a Lore character. After import, choose the Long River general background in the story default-background selector.",
-        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model. Portraits and the background require Lore materials support; selecting the default background requires story presentation support. Import does not change story background settings."
+        "description": "An open-world cultivation setting across five regions and an immortal realm, where practice, rivalry, crafts, trade and ascension each carry weight. Includes 31 full character profiles covering appearance, techniques, constitution, history and potential relationships; six recommended protagonists, four editable openings, seven female portraits, a general background, native state and eighteen event types. Written with imagery first and only the rules that matter, within 50,000 Chinese characters.",
+        "usage": "Import the world lore into a book and optionally adopt its recommended background, narrative, state, rules, events and image preset as new-story defaults. Every choice remains editable. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis Skill works independently. Use the existing-character opening when playing a Lore character. Ordinary imports leave book defaults unchanged. Creating a new book from the package preselects the recommendations, which can be deselected. Existing stories remain unchanged and package updates never reapply defaults.",
+        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model. Requires Lore materials, story presentation and package game-default recommendations support. Adopted choices prefill new stories only; they do not change existing stories or enable automatic image generation."
       }
     }
   },
@@ -82,5 +82,19 @@
       "kind": "preset.events",
       "path": "events.json"
     }
-  ]
+  ],
+  "game_defaults": {
+    "default_background": {
+      "resource_id": "lore",
+      "item_id": "world",
+      "asset_path": "assets/long-river-background.png"
+    },
+    "narrative_style_id": "narrative",
+    "actor_state_id": "actor-state",
+    "rule_system_id": "rules",
+    "event_package_ids": [
+      "events"
+    ],
+    "image_preset_id": "illustration"
+  }
 }
