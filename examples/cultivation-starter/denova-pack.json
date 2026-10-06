@@ -4,8 +4,8 @@
   "package": {
     "id": "cultivation-starter",
     "name": "照夜长河 · 大世界修仙模拟",
-    "description": "五域与仙界的修仙大世界：修炼、争锋、百艺、经营与飞升各有分量。三十一份人物卡写尽外貌、功法、体质、事迹与情缘倾向；六位推荐主角、四种可编辑开局、七位女性人物封面与通用背景，配原生状态与十八类际遇。全文五万字以内，以意象立世界，只留必要规则。",
-    "version": "2.2.1",
+    "description": "五域与仙界的修仙大世界：修炼、争锋、百艺、经营与飞升各有分量。三十一份人物卡写尽外貌、功法、体质、事迹与情缘倾向；六位推荐主角、四种可编辑开局、七位女性人物封面与通用背景，配原生状态与十八类际遇。全文五万字以内，以意象立世界，只留必要规则。 附带六组资料索引，世界总览全文常驻，其余资料先展示查阅简介。 附带资料创建 Skill，指导角色、世界规则、势力、地点与功法器物的分节编写。",
+    "version": "2.3.0",
     "author": "alfredxw",
     "locale": "zh-CN",
     "tags": [
@@ -14,14 +14,14 @@
       "cultivation",
       "images"
     ],
-    "usage": "导入世界资料到目标作品，可将推荐搭配采用为本书的新故事默认配置，预选通用背景、叙事风格、状态、规则、事件和插图方案；各项仍可调整。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书 Skill 可独立使用。 推荐主角含孟迟、纪含章、顾停云、宋问渠、陆照棠、祝清砚。扮演既有人物可选“既有人物·此刻启程”。普通导入不会改动本书默认配置；从资源包创建新书时推荐搭配默认勾选，可取消。已有故事不受影响，包更新不会重新应用默认配置。",
-    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书 Skill 可单独选装；生成插图需要图像模型。 人物封面与通用背景使用资料素材集合，需要支持资料素材、故事背景及资源包推荐默认配置的版本；仅在用户采用后预填新故事，不修改已有故事，不开启自动生图。",
+    "usage": "导入世界资料到目标作品，可将推荐搭配采用为本书的新故事默认配置，预选通用背景、叙事风格、状态、规则、事件和插图方案；各项仍可调整。可自定义角色、选择资料中的人物及起始情境，也可选用并编辑附带开局；不要求从东陵或低阶开始。资料不预置玩家身份与关系。导入不改动已有故事配置，拆书与资料创建 Skill 均可独立使用。导入 lore-creation 后，可在写作或游戏配置的项目对话中请求创建角色和设定资料，按类型生成小节并保存到资料库。 推荐主角含孟迟、纪含章、顾停云、宋问渠、陆照棠、祝清砚。扮演既有人物可选“既有人物·此刻启程”。普通导入不会改动本书默认配置；从资源包创建新书时推荐搭配默认勾选，可取消。已有故事配置保持不变，包更新不会重新应用默认配置。导入资料同时带入可编辑的六组资料索引，写作与游戏共用；世界总览展示全文，其余资料展示简介并按需读取正文。将资料更新应用到已有作品后，后续创作与游戏回合会使用更新后的索引。",
+    "compatibility": "导入资料与开场时选择目标书籍；选择开场会包含配套资料。拆书与资料创建 Skill 均可单独选装，无需配套世界资料；资料创建的保存需项目资料读写工具，缺少工具时仅交付草稿；生成插图需要图像模型。 人物封面与通用背景使用资料素材集合，需要支持资料索引、资料素材、故事背景及资源包推荐默认配置的版本；仅在用户采用后预填新故事，不修改已有故事配置，不开启自动生图。索引分组仅关联本包资料，不修改整本书的自动分组展示默认值；已有分组设置与本地资料修改按导入更新规则处理。",
     "translations": {
       "en-US": {
         "name": "Lanterns of the Long River · Cultivation World Simulation",
-        "description": "An open-world cultivation setting across five regions and an immortal realm, where practice, rivalry, crafts, trade and ascension each carry weight. Includes 31 full character profiles covering appearance, techniques, constitution, history and potential relationships; six recommended protagonists, four editable openings, seven female portraits, a general background, native state and eighteen event types. Written with imagery first and only the rules that matter, within 50,000 Chinese characters.",
-        "usage": "Import the world lore into a book and optionally adopt its recommended background, narrative, state, rules, events and image preset as new-story defaults. Every choice remains editable. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis Skill works independently. Use the existing-character opening when playing a Lore character. Ordinary imports leave book defaults unchanged. Creating a new book from the package preselects the recommendations, which can be deselected. Existing stories remain unchanged and package updates never reapply defaults.",
-        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. The Skill is independently selectable; illustrations require an image model. Requires Lore materials, story presentation and package game-default recommendations support. Adopted choices prefill new stories only; they do not change existing stories or enable automatic image generation."
+        "description": "An open-world cultivation setting across five regions and an immortal realm, where practice, rivalry, crafts, trade and ascension each carry weight. Includes 31 full character profiles covering appearance, techniques, constitution, history and potential relationships; six recommended protagonists, four editable openings, seven female portraits, a general background, native state and eighteen event types. Written with imagery first and only the rules that matter, within 50,000 Chinese characters. Includes a six-section Lore index with the world overview in full and lookup briefs for the other entries. Includes a Lore creation Skill with section guides for characters, world rules, factions, locations, techniques and items.",
+        "usage": "Import the world lore into a book and optionally adopt its recommended background, narrative, state, rules, events and image preset as new-story defaults. Every choice remains editable. Create a character, play an existing character, or edit an optional opening. Starting region, cultivation stage and circumstances are yours to define. Lore does not assign the player an identity or relationships. Import does not change existing story settings. The book-analysis and lore-creation Skills work independently. After importing lore-creation, ask a project chat in Writing or Game configuration to create character or setting Lore with structured sections and save it to the library. Use the existing-character opening when playing a Lore character. Ordinary imports leave book defaults unchanged. Creating a new book from the package preselects the recommendations, which can be deselected. Existing story settings remain unchanged and package updates never reapply defaults. Importing Lore also installs six editable index sections shared by Writing and Game: the world overview is included in full, while other entries show lookup briefs with full text read on demand. Applying Lore updates to an existing book changes the index used by subsequent writing and game turns.",
+        "compatibility": "Choose a target book for lore and openings. Openings include their lore dependencies. Both Skills are independently selectable without the world Lore. Saving created Lore requires project Lore read/write tools; otherwise the Skill delivers a draft. Illustrations require an image model. Requires Lore index, Lore materials, story presentation and package game-default recommendations support. Adopted choices prefill new stories only; they do not change existing story settings or enable automatic image generation. Index sections associate only this package's entries and leave book-wide automatic group detail defaults unchanged. Existing section settings and local Lore edits follow the import update rules."
       }
     }
   },
@@ -63,6 +63,11 @@
       "id": "book-analysis",
       "kind": "skill",
       "path": "skills/book-analysis"
+    },
+    {
+      "id": "lore-creation",
+      "kind": "skill",
+      "path": "skills/lore-creation"
     },
     {
       "id": "actor-state",
