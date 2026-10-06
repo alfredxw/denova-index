@@ -65,7 +65,27 @@
           {
             "asset_path": "assets/long-river-background.png",
             "name": "照夜长河·通用背景",
-            "description": "远山、长河与临水镇落，默认背景素材。"
+            "description": "黄昏远山、长河、临水镇落与远处仙门。适合开局全景、临水停留、远眺与相近山河间的行旅；画面具有临水和黄昏特征。默认背景素材。"
+          },
+          {
+            "asset_path": "assets/living-quarters-background.webp",
+            "name": "照夜长河·起居雅室",
+            "description": "木石起居室，床榻备有寝具与半开帘帐，另有案几、屏风和打坐空地。适合洞府居室、宗门住处或客舍上房中的修炼、读书、休息、疗伤、密谈及成年人亲密相处；家具不预置住客身份或已经发生的活动。"
+          },
+          {
+            "asset_path": "assets/market-street-background.webp",
+            "name": "照夜长河·坊市街巷",
+            "description": "石板街道、木制铺面与廊檐，街边陈列药材、陶罐和日常货物，中央留有通行空间。适合清梧镇、松烟坊及相近聚落的采购、摆摊、委托、交谈、邂逅、追逐与冲突；没有特定城名、节庆或拍卖布置。"
+          },
+          {
+            "asset_path": "assets/courtyard-background.webp",
+            "name": "照夜长河·庭院石坪",
+            "description": "开阔石坪、木廊、亭舍与少量树木，院中留有活动空间。适合宗门院落、宅院或客舍庭院的授业、练功、比试、会面、议事与日常聚会；没有宗徽、专属武器地标或预设宴席。"
+          },
+          {
+            "asset_path": "assets/ancient-ruins-background.webp",
+            "name": "照夜长河·遗迹内景",
+            "description": "古旧石殿与深处回廊，石柱、磨损台阶和少量边缘碎石呈现岁月痕迹，中央地面可通行。适合古府、旧殿或地下遗迹的探索、调查、寻宝、交谈、对峙与斗法；没有特定异火、宝物、已触发机关或战斗结果，不代表冰湖、海底与熔岩地带。"
           }
         ],
         "cover_asset_path": "assets/long-river-background.png"
