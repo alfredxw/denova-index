@@ -5,7 +5,8 @@
     "id": "extension-starter",
     "name": "扩展示例 · 文本统计与邻里来信",
     "description": "可独立选装的通用文本统计工具与微信式 AI 对话游戏。游戏包含三个原创联系人、自由聊天、朋友圈、点赞评论与进度恢复。",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "min_denova_version": "0.6.0",
     "author": "alfredxw",
     "locale": "zh-CN",
     "tags": [
@@ -14,13 +15,13 @@
       "tools"
     ],
     "usage": "按需选装文本统计插件与邻里来信游戏。在扩展中启用统计工具集；在游戏中创建邻里来信故事，配置文本模型并授权所需权限后开始游玩。",
-    "compatibility": "需要 Denova 扩展 API v1。统计工具需要 Node.js；游戏需要配置文本模型并授权角色会话与实例存档。界面为虚构社交游戏。",
+    "compatibility": "需要 Denova 0.6.0 或更高版本与扩展 API v1。统计工具需要 Node.js 22 或更高版本；游戏需要配置文本模型并授权角色会话与实例存档。界面为虚构社交游戏。",
     "translations": {
       "en-US": {
         "name": "Extension examples · statistics & Small Circle",
         "description": "Independently selectable text statistics and a messaging-style AI social game with three original contacts, free-form chat, moments, likes, comments and saved progress.",
         "usage": "Select the statistics plugin and Small Circle game independently. Enable the statistics toolset in Extensions; create a Small Circle story in Games, configure its text model and grant the required permissions to play.",
-        "compatibility": "Requires Denova extension API v1. Statistics needs Node.js; the fictional social game needs a text model, Agent sessions and instance storage permissions."
+        "compatibility": "Requires Denova 0.6.0 or later and extension API v1. Statistics needs Node.js 22 or later; the fictional social game needs a text model, Agent sessions and instance storage permissions."
       }
     }
   },

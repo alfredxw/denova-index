@@ -1,8 +1,9 @@
 {
   "manifestVersion": 1,
   "id": "index.text-statistics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiMajor": 1,
+  "minHostVersion": "0.6.0",
   "name": {
     "zh-CN": "文本统计",
     "en-US": "Text statistics"
@@ -44,6 +45,7 @@
       {
         "id": "statistics",
         "definition": "tools/statistics.json",
+        "agentContexts": ["writing", "game", "general"],
         "endpoint": {
           "method": "POST",
           "path": "/tools/statistics"

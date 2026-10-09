@@ -1,8 +1,9 @@
 {
   "manifestVersion": 1,
   "id": "index.small-circle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiMajor": 1,
+  "minHostVersion": "0.6.0",
   "name": {
     "zh-CN": "邻里来信",
     "en-US": "Small Circle"
