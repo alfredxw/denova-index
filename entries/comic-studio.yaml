@@ -1,0 +1,6 @@
+source:
+  kind: github
+  url: https://github.com/alfredxw/denova-index
+  ref: main
+  path: examples/comic-studio
+featured: true

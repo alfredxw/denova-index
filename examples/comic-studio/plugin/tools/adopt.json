@@ -1,0 +1,45 @@
+{
+  "description": "Adopt saved comic candidates in one batch. Supply each exact pageId, resultId and expectedCurrentId from inspect. Each item succeeds or fails independently. A different current image returns a conflict; sources and history are retained. Repeated adoption of the same result is harmless. Only adopt when the user has authorized adoption.",
+  "effect": "write",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 100,
+        "items": {
+          "type": "object",
+          "properties": {
+            "pageId": {
+              "type": "string"
+            },
+            "resultId": {
+              "type": "string"
+            },
+            "expectedCurrentId": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "pageId",
+            "resultId",
+            "expectedCurrentId"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "items"
+    ],
+    "additionalProperties": false
+  }
+}

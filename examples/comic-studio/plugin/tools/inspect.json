@@ -1,0 +1,36 @@
+{
+  "description": "Read comic structure, a page and its revision, episode scripts with exact generation/adoption progress, or shared library items. Episode progress is derived from saved page jobs and candidates, never Agent Todo. Full episode detail is paginated; follow nextOffset. Summary returns thumbnails and counts without scripts.",
+  "effect": "read",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "pageId": {
+        "type": "string"
+      },
+      "libraryQuery": {
+        "type": "string"
+      },
+      "episodeId": {
+        "type": "string"
+      },
+      "detail": {
+        "type": "string",
+        "enum": [
+          "full",
+          "summary"
+        ]
+      },
+      "offset": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 10
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  }
+}

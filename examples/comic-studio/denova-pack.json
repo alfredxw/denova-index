@@ -1,0 +1,41 @@
+{
+  "format": "denova.resource-pack",
+  "schema_version": 1,
+  "package": {
+    "id": "comic-studio",
+    "name": "漫画工坊",
+    "description": "以整页图片为主体的漫画创作：分话分页、整话生成与续作、统一角色和画风参考、选区编辑和批量采用，复用项目 Agent 与资料库。",
+    "version": "1.0.0",
+    "min_denova_version": "0.6.0",
+    "author": "alfredxw",
+    "locale": "zh-CN",
+    "tags": [
+      "comic",
+      "image",
+      "writing"
+    ],
+    "usage": "同时安装插件与 comic-creation Skill，并授权。在漫画工坊选择图像模型，向现有 Agent 请求整话生成、继续剩余页面或批量采用；统一角色和画风参考保存在脚本中，作品保存到 Project/comic/。",
+    "compatibility": "需要 Denova 0.6.0 扩展 API v1、Node.js 22+ 和已配置的语言、图像模型。选区为模型编辑指导，不保证选区外像素完全不变。",
+    "translations": {
+      "en-US": {
+        "name": "Comic Studio",
+        "description": "Page-first comic creation with episode generation and continuation, shared character and style references, region edits and bulk adoption, using the existing Project Agent and library.",
+        "usage": "Install the plugin and comic-creation Skill and grant permissions. Select an image model in Comic Studio, then ask the existing Agent to generate an episode, resume remaining pages or adopt candidates in bulk. Shared character and style references are saved with the scripts; artwork lives in Project/comic/.",
+        "compatibility": "Requires Denova 0.6.0 extension API v1, Node.js 22+ and configured language and image models. Regions guide the model and do not guarantee unchanged pixels outside the selection."
+      }
+    },
+    "updated_at": "2026-10-11"
+  },
+  "resources": [
+    {
+      "id": "comic-studio",
+      "kind": "extension.plugin",
+      "path": "plugin"
+    },
+    {
+      "id": "comic-creation",
+      "kind": "skill",
+      "path": "skills/comic-creation"
+    }
+  ]
+}

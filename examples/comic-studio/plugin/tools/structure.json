@@ -1,0 +1,142 @@
+{
+  "description": "Create an episode, create 1 to 100 pages with count, or save scripts and common references with kind=plan. Read page revisions first. Plan items succeed or fail independently. A saved script receives a stable image command ID; unchanged scripts preserve it. Select the image model in the toolbar before saving scripts. Scripts are artwork data; the Agent owns execution and Todo.",
+  "effect": "write",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "kind": {
+        "type": "string",
+        "enum": [
+          "episode",
+          "page",
+          "plan"
+        ]
+      },
+      "title": {
+        "type": "string",
+        "description": "Optional episode title only when supplied by the user."
+      },
+      "episodeId": {
+        "type": "string"
+      },
+      "count": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "expectedRevision": {
+        "type": "string",
+        "description": "Episode settings revision returned by inspect."
+      },
+      "references": {
+        "type": "array",
+        "description": "Common character and style references for every page. Supply this top-level array on the first plan; read the selected page's full references with comic_inspect(pageId) and include the requested library IDs. Never put references inside pages. Omit only to retain an existing episode snapshot; [] deliberately clears references.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "libraryId": {
+              "type": "string"
+            },
+            "asset": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "project",
+                    "shared",
+                    "generated"
+                  ]
+                },
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "label": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string",
+              "maxLength": 32768,
+              "description": "Fixed reference text. Together with asset, preserves the saved reference without rereading the library."
+            }
+          },
+          "additionalProperties": false
+        },
+        "maxItems": 12
+      },
+      "pages": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 100,
+        "items": {
+          "type": "object",
+          "properties": {
+            "pageId": {
+              "type": "string"
+            },
+            "prompt": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 16384,
+              "description": "Complete page script and exact dialogue, at most 16 KiB in UTF-8."
+            },
+            "expectedRevision": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pageId",
+            "prompt",
+            "expectedRevision"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "kind"
+    ],
+    "additionalProperties": false,
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "page"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "episodeId"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "plan"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "episodeId",
+            "pages"
+          ]
+        }
+      }
+    ]
+  }
+}

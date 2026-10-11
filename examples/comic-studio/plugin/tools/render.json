@@ -1,0 +1,115 @@
+{
+  "description": "Generate one complete comic page, edit an image, or recover an existing request. With only pageId, execute its saved script using its fixed model and references. Existing command IDs never start another paid generation. Failed or interrupted requests require explicit retry authorization and a new command ID. Results remain candidates until adopted.",
+  "effect": "write",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "pageId": {
+        "type": "string"
+      },
+      "commandId": {
+        "type": "string",
+        "description": "Omit to execute the saved page script. New deliberate generations use a new UUID; existing IDs recover the same operation."
+      },
+      "prompt": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32000,
+        "description": "Omit to use the saved page script. Recovery does not require a prompt."
+      },
+      "sourceId": {
+        "type": "string"
+      },
+      "selection": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "width": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "height": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "additionalProperties": false
+      },
+      "references": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "libraryId": {
+              "type": "string"
+            },
+            "asset": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "project",
+                    "shared",
+                    "generated"
+                  ]
+                },
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "label": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string",
+              "maxLength": 32768,
+              "description": "Fixed reference text. Together with asset, preserves the saved reference without rereading the library."
+            }
+          },
+          "additionalProperties": false
+        },
+        "maxItems": 12
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "generate",
+          "recover",
+          "retry"
+        ],
+        "description": "generate uses a saved script or explicit input; recover only queries an existing request; retry requires a failed saved script and a new commandId, retaining its model and references. Never retry without user authorization."
+      }
+    },
+    "required": [
+      "pageId"
+    ],
+    "additionalProperties": false
+  }
+}
