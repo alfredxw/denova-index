@@ -2,12 +2,15 @@ import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises'
 import { parseDocument } from 'yaml'
 import { buildCatalog } from './catalog.mjs'
 import { validateRegistration, resolveEntry } from './resolve.mjs'
+import { discoverEntries } from './discover.mjs'
 const entries = []
 for (const name of (await readdir('entries')).filter(name => name.endsWith('.yaml')).sort()) {
   const document = parseDocument(await readFile(`entries/${name}`, 'utf8'), { uniqueKeys: true })
   if (document.errors.length) throw document.errors[0]
   entries.push(await resolveEntry(validateRegistration(document.toJS({ maxAliasCount: 0 }), name)))
 }
+const excluded = JSON.parse(await readFile('excluded-repositories.json', 'utf8'))
+entries.push(...await discoverEntries(entries, excluded))
 const catalog = buildCatalog(entries)
 await mkdir('dist', { recursive: true })
 await writeFile('dist/index.json', catalog)

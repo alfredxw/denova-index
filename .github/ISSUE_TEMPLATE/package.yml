@@ -2,6 +2,9 @@ name: Submit or update a package
 description: Register a package by its public source; presentation comes from denova-pack.json.
 title: "[Package] "
 body:
+  - type: markdown
+    attributes:
+      value: "For automatic discovery, put denova-pack.json at your public repository's default-branch root and add the denova-package topic. No issue is needed. [Publishing guide / 发布指南](https://github.com/alfredxw/denova-index/blob/main/docs/publishing.md). Use this form for subdirectories, specific refs or ZIP sources."
   - type: input
     id: source
     attributes:

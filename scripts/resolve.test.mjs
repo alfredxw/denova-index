@@ -85,5 +85,5 @@ test('ZIP registration reads the same manifest without a separate metadata forma
 })
 test('unavailable manifest fails publication rather than producing an empty package', async t => {
   t.mock.method(globalThis, 'fetch', async () => new Response('', { status: 404 }))
-  await assert.rejects(resolveEntry(registered()), /Manifest request failed/)
+  await assert.rejects(resolveEntry(registered()), /Metadata request failed/)
 })

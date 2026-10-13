@@ -3,7 +3,7 @@
 Public discovery metadata for Denova. Community packages stay in their authors' repositories. This repository maintains **two original example bundles**.
 
 - Catalog: https://alfredxw.github.io/denova-index/index.json
-- Submit: https://github.com/alfredxw/denova-index/issues/new?template=package.yml
+- Publish automatically or submit: [Publishing guide / 发布指南](docs/publishing.md)
 
 ## Examples
 
@@ -27,6 +27,8 @@ Small Circle includes three fictional contacts, private free-form conversations,
 The former six market entries have been replaced. Existing user installations and saves are not deleted or converted. Small Circle has a new game identity; it does not open old Lantern Crossing saves. If the previous standalone statistics installation is still tracked, resolve its ownership through the app's import preview before installing that member of the new bundle.
 
 ## Contribute
+
+For self-service discovery, put `denova-pack.json` at your public repository's default-branch root and add the **`denova-package`** GitHub topic. The index collects these packages during its existing scheduled builds. See the [publishing guide](docs/publishing.md) for eligibility, timing, conflicts and delisting. Manual registrations remain available for subdirectories, specific refs and ZIP sources.
 
 Authors maintain **one descriptor: `denova-pack.json`**. It contains both the resource list and the information shown in the market. No separate market metadata file is needed.
 
@@ -62,7 +64,7 @@ Authors maintain **one descriptor: `denova-pack.json`**. It contains both the re
 - Resource kinds come from `resources`, and GitHub update dates come from the package directory's latest commit. Do not maintain copies of these values.
 - A bundle with one Skill or extension uses the same descriptor. Keep the Skill or extension in its own resource directory; its native manifest defines its runtime behavior, not a second market entry. Direct native imports into Denova remain available.
 
-To register, submit the **repository URL, Git ref and package directory** using the issue form, or add `entries/<package.id>.yaml`:
+To register manually, submit the **repository URL, Git ref and package directory** using the [issue form](https://github.com/alfredxw/denova-index/issues/new?template=package.yml), or add `entries/<package.id>.yaml`:
 
 ```yaml
 source:
@@ -101,9 +103,9 @@ Tests cover catalog validation and package manifest resolution. CI runs these ch
 
 `npm run preview` starts the **scripted development preview** at http://127.0.0.1:4381. It uses temporary in-memory data and test replies, not a live AI model. Set `PORT` to use another free port. For real play, install the bundle into Denova and configure the game's text model.
 
-`dist/index.json` is generated, not maintained. Package authors update their own repositories without changing registrations. Index PRs are needed only to add/remove registrations, change a source, or change curation.
+`dist/index.json` is generated, not maintained. It combines manual registrations with GitHub topic discoveries; the latter carry `discovery: "github_topic"` and cannot be featured automatically. Package authors update their own repositories without changing registrations. Index PRs manage manual registrations, curation and `excluded-repositories.json` (automatic-discovery exclusions).
 
-Tests run offline with local fixtures. The build reads one public package manifest from each registered repository at a resolved commit, never downloads archives or executes third-party code. It reads this repository's examples from the checkout. `GITHUB_TOKEN` is used only for GitHub API requests when available. Failed or invalid metadata fails the build and does not replace the last published catalog.
+Tests run offline with local fixtures. The build reads public package manifests at resolved commits, never downloads archives or executes third-party code. It reads this repository's examples from the checkout. `GITHUB_TOKEN` is used only for GitHub API requests when available. Failed or invalid manual-registration metadata fails the build. Missing or invalid automatic submissions are skipped and logged; incomplete searches and transport failures abort publication, preserving the last published catalog.
 
 GitHub Actions rebuilds on merges to `main`, manual dispatch, and every six hours to pick up upstream changes. Repository checkout includes history so bundled example dates can be derived correctly. The generated catalog remains a discovery snapshot; Denova independently freezes and validates the actual package before installation.
 

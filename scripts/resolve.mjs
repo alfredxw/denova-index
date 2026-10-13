@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { execFileSync } from 'node:child_process'
 import { validateEntry } from './catalog.mjs'
+import { fetchJSON } from './metadata.mjs'
 
 // Authors maintain one package manifest; the index keeps only source and curation.
 export function validateRegistration(entry, filename) {
@@ -31,7 +32,8 @@ export async function assembleEntry(registration, read, updatedAt) {
   const manifest = await read('denova-pack.json')
   assert(manifest && manifest.format === 'denova.resource-pack' && manifest.schema_version === 1, 'Invalid package manifest')
   const info = manifest.package
-  assert(info && info.id === registration.id, 'Package identity must match the registration filename')
+  // Topic discovery has no registration filename; identity still comes only from the manifest.
+  assert(info && (registration.id === undefined || info.id === registration.id), 'Package identity must match the registration filename')
   assert(Object.keys(info).every(key => ['id', 'name', 'description', 'version', 'author', 'min_denova_version', 'locale', 'translations', 'tags', 'cover', 'usage', 'compatibility', 'updated_at'].includes(key)), 'Unknown package manifest field')
   assert(typeof info.locale === 'string' && info.locale.trim(), 'Package locale required for market registration')
   assert(typeof info.name === 'string' && info.name.trim() && typeof info.description === 'string' && info.description.trim(), 'Default package name and description required')
@@ -53,23 +55,7 @@ export async function assembleEntry(registration, read, updatedAt) {
     format: manifest.format, kinds: [...new Set(manifest.resources.map(resource => resource.kind))],
     tags: info.tags ?? [], cover: info.cover, usage: localized('usage'), compatibility: localized('compatibility'),
     source: registration.source, featured: registration.featured, updated_at: updatedAt || info.updated_at,
-  }, `${registration.id}.yaml`)
-}
-
-async function fetchJSON(url, token) {
-  const response = await fetch(url, {
-    redirect: 'error', signal: AbortSignal.timeout(20000),
-    headers: token ? { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } : {},
-  })
-  assert(response.ok, `Manifest request failed: ${response.status} ${url}`)
-  let length = 0
-  const chunks = []
-  for await (const chunk of response.body) {
-    length += chunk.length
-    assert(length <= 4 * 1024 * 1024, 'Manifest response exceeds 4 MiB')
-    chunks.push(chunk)
-  }
-  return JSON.parse(Buffer.concat(chunks).toString('utf8'))
+  }, `${info.id}.yaml`)
 }
 
 export async function resolveEntry(entry) {
