@@ -1,6 +1,6 @@
 {
   "name": "照夜长河 · 行卷",
-  "description": "记下时历、修为、伤势、财物和交游；故事里真正发生过的，才算数。",
+  "description": "记下时历、修为、伤势、财物、人情和仇怨；故事里真正发生过的，才算数。",
   "actor_state": {
     "templates": [
       {
@@ -11,7 +11,7 @@
           {
             "name": "境界",
             "type": "string",
-            "description": "本故事已经确认的境界，不拿资料里的参考境界覆盖。",
+            "description": "本故事已经确认的境界，不拿资料里的参考境界覆盖。境界是通行证，也是别人衡量你值不值得杀的标准。",
             "update_instruction": "突破或跌境后更新，写清新的能力和寿元；不跨故事同步。",
             "group": "修行",
             "display": "inline"
@@ -19,15 +19,15 @@
           {
             "name": "功法与进度",
             "type": "list",
-            "description": "修为积累，以及各门功法处于初学、熟练还是精通。",
-            "update_instruction": "有秘籍不等于已经学会；已经完成的积累不重置。",
+            "description": "修为积累，以及各门功法处于初学、熟练还是精通；有秘籍不等于会用。",
+            "update_instruction": "学会、练熟、练废或反噬后更新；已经完成的积累不重置。",
             "group": "修行",
             "display": "list"
           },
           {
             "name": "位置",
             "type": "string",
-            "description": "当前地域和具体所在。",
+            "description": "当前地域和具体所在；赶路、闭关、被俘都会改。",
             "update_instruction": "行旅后更新，把路程耗时算进去。",
             "group": "行踪",
             "display": "inline"
@@ -35,7 +35,7 @@
           {
             "name": "伤势",
             "type": "list",
-            "description": "还没好的伤，以及它限制什么行动，包括本源损伤。",
+            "description": "还没好的伤，以及它限制什么行动，包括本源损伤和暗伤。",
             "update_instruction": "有真实恢复依据后再移除；死者不无条件复活。",
             "group": "身体",
             "display": "list"
@@ -43,24 +43,24 @@
           {
             "name": "财物",
             "type": "list",
-            "description": "分币种的钱，以及写明数量的装备和消耗品。",
-            "update_instruction": "交易或消耗实际发生后再改，币种分开记。",
+            "description": "分币种的钱，以及写明数量的装备和消耗品；赃物和来路不明的东西分开记。",
+            "update_instruction": "交易、消耗或被抢后更新，币种分开记。",
             "group": "行装",
             "display": "list"
           },
           {
             "name": "约定",
             "type": "list",
-            "description": "已经接下的义务、对方、条款和期限。",
-            "update_instruction": "只记真正作出的承诺；别人委托不等于你接下。",
+            "description": "已经接下的义务、债务、对方、条款和期限；欠人情和欠灵石一样要还。",
+            "update_instruction": "只记真正作出的承诺和欠下的账；别人委托不等于你接下。",
             "group": "关系",
             "display": "list"
           },
           {
             "name": "交游",
             "type": "list",
-            "description": "重要关系、分工，以及建立信任或结怨的经历。",
-            "update_instruction": "按共同经历更新，不因为一件礼物就推定忠诚。",
+            "description": "重要关系、分工、亏欠、恐惧和结怨；真心和算计可以同时存在。",
+            "update_instruction": "按共同经历更新，不因为一件礼物就推定忠诚，也不因为一次冲突就推定死敌。",
             "group": "关系",
             "display": "list"
           },
@@ -75,39 +75,39 @@
           {
             "name": "年龄与寿元",
             "type": "string",
-            "description": "已确认的年龄、当前境界的寿数和已知折损。",
-            "update_instruction": "时间会加年龄，突破延寿但不是归零；余寿不是精确死期。",
+            "description": "已确认的年龄、当前境界的寿数和已知折损；余寿不是精确死期。",
+            "update_instruction": "时间会加年龄，突破延寿但不是归零；折寿和暗伤要一起记。",
             "group": "身体",
             "display": "inline"
           },
           {
             "name": "灵根与体质",
             "type": "list",
-            "description": "经确认或测定的资质、适配和限制。",
-            "update_instruction": "没定就写未定，不自动添加隐藏血脉。",
+            "description": "经确认或测定的资质、适配和限制；没定就写未定，不自动添加隐藏血脉。",
+            "update_instruction": "测灵、觉醒、受伤或体质变化后更新。",
             "group": "修行",
             "display": "list"
           },
           {
             "name": "灵力与心神",
             "type": "string",
-            "description": "能观察到的灵力、神识消耗和恢复情况。",
-            "update_instruction": "持续施法或休养后据实更新，不引入战力数值。",
+            "description": "能观察到的灵力、神识消耗和恢复情况；受伤、中毒、心魔都会影响。",
+            "update_instruction": "持续施法、休养或心神受创后据实更新，不引入战力数值。",
             "group": "身体",
             "display": "inline"
           },
           {
             "name": "身份与贡献",
             "type": "list",
-            "description": "宗门、师承、职役、权限，以及分账记录的贡献。",
-            "update_instruction": "入门、晋升、离宗实际发生后再更新；各组织的贡献不混用。",
+            "description": "宗门、师承、职役、权限、通缉或除名记录，以及分账记录的贡献。",
+            "update_instruction": "入门、晋升、离宗、叛宗或被通缉后更新；各组织的贡献不混用。",
             "group": "关系",
             "display": "list"
           },
           {
             "name": "洞府与产业",
             "type": "list",
-            "description": "拥有或承租的地点、经营项、受托者和分成。",
+            "description": "拥有或承租的地点、经营项、受托者、分成和欠账。",
             "update_instruction": "只记已经落实的权益；长期推进时结算净收益和成本。",
             "group": "行装",
             "display": "list"
