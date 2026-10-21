@@ -1,6 +1,6 @@
 {
   "name": "照夜长河 · 仙途际遇",
-  "description": "十八类际遇，按角色、地域、境界和时辰自然出现；不规定开局，也不替玩家行动。每一次机会都可能藏着刀。",
+  "description": "二十二类际遇，按角色、地域、境界和时辰自然出现；不规定开局，也不替玩家行动。每一次机会都可能藏着刀，也可能藏着命。",
   "events": [
     {
       "id": "immortal-gathering",
@@ -9,7 +9,10 @@
       "enabled": true,
       "category": "growth",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "craft-apprentice",
@@ -18,7 +21,10 @@
       "enabled": true,
       "category": "daily",
       "intensity": "low",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "partner-invitation",
@@ -27,7 +33,10 @@
       "enabled": true,
       "category": "relationship",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "sword-match",
@@ -36,7 +45,10 @@
       "enabled": true,
       "category": "growth",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "ranking-release",
@@ -45,7 +57,10 @@
       "enabled": true,
       "category": "social",
       "intensity": "low",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "treasure-auction",
@@ -54,7 +69,10 @@
       "enabled": true,
       "category": "exploration",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "sword-trial",
@@ -63,7 +81,10 @@
       "enabled": true,
       "category": "growth",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "palace-alliance",
@@ -72,7 +93,10 @@
       "enabled": true,
       "category": "social",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "palace-contention",
@@ -81,7 +105,10 @@
       "enabled": true,
       "category": "exploration",
       "intensity": "high",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "breakthrough",
@@ -90,7 +117,10 @@
       "enabled": true,
       "category": "growth",
       "intensity": "high",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "old-sect",
@@ -99,7 +129,10 @@
       "enabled": true,
       "category": "relationship",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "quiet-cave",
@@ -108,7 +141,10 @@
       "enabled": true,
       "category": "daily",
       "intensity": "low",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "long-retreat",
@@ -117,7 +153,10 @@
       "enabled": true,
       "category": "daily",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "regional-voyage",
@@ -126,7 +165,10 @@
       "enabled": true,
       "category": "exploration",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "craft-enterprise",
@@ -135,7 +177,10 @@
       "enabled": true,
       "category": "daily",
       "intensity": "medium",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "regional-pact",
@@ -144,7 +189,10 @@
       "enabled": true,
       "category": "social",
       "intensity": "high",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "sect-succession",
@@ -153,7 +201,10 @@
       "enabled": true,
       "category": "relationship",
       "intensity": "high",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     },
     {
       "id": "crossing-worlds",
@@ -162,7 +213,58 @@
       "enabled": true,
       "category": "growth",
       "intensity": "high",
-      "tags": ["修仙", "照夜长河"]
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
+    },
+    {
+      "id": "fateful-encounter",
+      "type_name": "命里该遇",
+      "description_markdown": "一个不该出现在这里的人、一场反复做的梦、一件旧物上的生辰、一句没头没尾的预言，都可能是命数露出的线头。奇遇可以带来功法、靠山、情缘或灾祸；先看它要什么，再决定接不接。",
+      "enabled": true,
+      "category": "exploration",
+      "intensity": "medium",
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
+    },
+    {
+      "id": "crimson-feast",
+      "type_name": "春宴夜火",
+      "description_markdown": "镜湖画舫上的一场夜宴：酒、香、曲子、赌局和半真半假的情话。有人想谈生意，有人想找人，有人只想在夜里不那么孤单；毒、嫉妒、旧情和刺客也可能同席。",
+      "enabled": true,
+      "category": "relationship",
+      "intensity": "high",
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
+    },
+    {
+      "id": "karmic-backlash",
+      "type_name": "天机反噬",
+      "description_markdown": "有人替你算了一命，或者你动了不该动的命格。接下来几天，巧合会变多，旧人会出现，原本稳的事开始出岔子。命运给的不是答案，是一张要付账的账单。",
+      "enabled": true,
+      "category": "growth",
+      "intensity": "high",
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
+    },
+    {
+      "id": "blood-debt",
+      "type_name": "血债上门",
+      "description_markdown": "旧仇、旧债、旧承诺一起找上门：可能是苦主、可能是同伙、也可能是一个你早就忘了的人。对方带着证据、刀或更坏的东西；谈得拢就谈，谈不拢就见血。",
+      "enabled": true,
+      "category": "relationship",
+      "intensity": "high",
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
     }
   ]
 }
