@@ -1,6 +1,6 @@
 {
   "name": "照夜长河 · 仙途际遇",
-  "description": "二十二类际遇，按角色、地域、境界和时辰自然出现；不规定开局，也不替玩家行动。每一次机会都可能藏着刀，也可能藏着命。",
+  "description": "二十三类际遇，按角色、地域、境界和时辰自然出现；不规定开局，也不替玩家行动。每一次机会都可能藏着刀，也可能藏着命。",
   "events": [
     {
       "id": "immortal-gathering",
@@ -233,7 +233,7 @@
     {
       "id": "crimson-feast",
       "type_name": "春宴夜火",
-      "description_markdown": "镜湖画舫上的一场夜宴：酒、香、曲子、赌局和半真半假的情话。有人想谈生意，有人想找人，有人只想在夜里不那么孤单；毒、嫉妒、旧情和刺客也可能同席。",
+      "description_markdown": "镜湖画舫上的一场夜宴：酒、香、曲子、赌局和半真半假的情话。画舫上有人半醉地靠在栏边，衣襟松了，笑声比水声还软；也有人借着敬酒，把手指按在对方腕上多停了一息。有人想谈生意，有人想找人，有人只想在夜里不那么孤单；毒、嫉妒、旧情和刺客也可能同席。",
       "enabled": true,
       "category": "relationship",
       "intensity": "high",
@@ -261,6 +261,18 @@
       "enabled": true,
       "category": "relationship",
       "intensity": "high",
+      "tags": [
+        "修仙",
+        "照夜长河"
+      ]
+    },
+    {
+      "id": "dual-cultivation",
+      "type_name": "双修夜话",
+      "description_markdown": "合息、双修或借气息疗伤：可以是交易、试探、真心，也可以是一个局。气息相合时进境更快，不合时反噬更重；体温、呼吸、汗、指尖和失控的边界，跟着玩家的选择走。",
+      "enabled": true,
+      "category": "relationship",
+      "intensity": "medium",
       "tags": [
         "修仙",
         "照夜长河"
